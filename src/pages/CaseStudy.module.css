@@ -1,0 +1,109 @@
+.caseStudyMain {
+  padding-top: 8rem;
+  padding-bottom: 6rem;
+  min-height: 80vh;
+  background-color: var(--bg-primary);
+}
+
+.backLink {
+  margin-bottom: 2rem;
+}
+
+.backLink a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  transition: color var(--transition-fast);
+}
+
+.backLink a:hover {
+  color: var(--text-primary);
+}
+
+.header {
+  margin-bottom: 3rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--bg-glass-border);
+}
+
+.title {
+  font-size: 3rem;
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+}
+
+.meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.links {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.iconLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  transition: color var(--transition-fast);
+}
+
+.iconLink:hover {
+  color: var(--text-primary);
+}
+
+.documentation {
+  max-width: 800px;
+}
+
+.imagePlaceholder {
+  width: 100%;
+  aspect-ratio: 16/9;
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--bg-glass-border);
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-secondary);
+  margin-bottom: 4rem;
+}
+
+.documentation section {
+  margin-bottom: 3rem;
+}
+
+.documentation h2 {
+  font-size: 1.5rem;
+  color: var(--text-primary);
+  margin-bottom: 1.25rem;
+  font-weight: 600;
+}
+
+.documentation p {
+  color: var(--text-secondary);
+  font-size: 1.1rem;
+  line-height: 1.7;
+  margin-bottom: 1rem;
+}
+
+.documentation ul {
+  padding-left: 1.5rem;
+  color: var(--text-secondary);
+}
+
+.documentation li {
+  margin-bottom: 0.5rem;
+  font-size: 1.05rem;
+}
+
+.documentation strong {
+  color: var(--text-primary);
+  font-weight: 500;
+}

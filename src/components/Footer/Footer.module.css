@@ -1,0 +1,112 @@
+.footerSection {
+  padding: 8rem 0 4rem 0;
+  display: flex;
+  justify-content: center;
+}
+
+.envelope {
+  max-width: 800px;
+  margin: 0 auto;
+  background: white;
+  border: 2px solid var(--ink-black);
+  border-radius: var(--radius-rough);
+  padding: 4rem;
+  box-shadow: 8px 8px 0px var(--ink-black);
+  position: relative;
+  opacity: 0;
+  transform: translateY(40px) rotate(-1deg);
+  transition: all var(--transition-slow);
+}
+
+.envelope.visible {
+  opacity: 1;
+  transform: translateY(0) rotate(1deg);
+}
+
+.stamp {
+  position: absolute;
+  top: 30px;
+  right: 40px;
+  width: 80px;
+  height: 90px;
+  border: 2px dashed var(--ink-black);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-family: var(--font-hand);
+  font-weight: bold;
+  font-size: 1.25rem;
+  transform: rotate(15deg);
+  color: #ff5e5e;
+  border-color: #ff5e5e;
+}
+
+.handTitle {
+  font-family: var(--font-hand);
+  font-size: 3.5rem;
+  margin-bottom: 2rem;
+  max-width: 80%;
+}
+
+.typeText {
+  font-size: 1.15rem;
+  font-weight: bold;
+  line-height: 1.6;
+  margin-bottom: 3rem;
+  max-width: 600px;
+}
+
+.actions {
+  margin-bottom: 4rem;
+}
+
+.doodleLinks {
+  display: flex;
+  gap: 2rem;
+}
+
+.doodleLinks a {
+  font-family: var(--font-hand);
+  font-size: 1.5rem;
+  font-weight: bold;
+  transition: transform var(--transition-fast);
+  display: inline-block;
+}
+
+.doodleLinks a:hover {
+  transform: translateY(-5px) rotate(-5deg);
+  color: var(--highlighter);
+  text-shadow: 1px 1px 0px var(--ink-black), -1px -1px 0px var(--ink-black), 1px -1px 0px var(--ink-black), -1px 1px 0px var(--ink-black);
+}
+
+.signature {
+  position: absolute;
+  bottom: 30px;
+  right: 40px;
+  font-family: var(--font-hand);
+  font-size: 2.5rem;
+  transform: rotate(-10deg);
+}
+
+@media (max-width: 768px) {
+  .envelope {
+    padding: 2rem;
+  }
+  
+  .stamp {
+    top: 10px;
+    right: 10px;
+    width: 60px;
+    height: 70px;
+    font-size: 1rem;
+  }
+  
+  .signature {
+    position: relative;
+    bottom: auto;
+    right: auto;
+    margin-top: 3rem;
+    text-align: right;
+  }
+}
