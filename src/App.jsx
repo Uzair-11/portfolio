@@ -4,7 +4,7 @@ import CaseStudy from './pages/CaseStudy';
 
 function App() {
   return (
-    <Router>
+    <Router basename="/portfolio/">
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/project/:id" element={<CaseStudy />} />
