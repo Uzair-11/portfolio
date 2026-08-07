@@ -4,7 +4,7 @@ import CaseStudy from './pages/CaseStudy';
 
 function App() {
   return (
-    <Router basename="/portfolio/">
+    <Router basename={import.meta.env.BASE_URL || '/portfolio/'}>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/project/:id" element={<CaseStudy />} />
@@ -14,3 +14,4 @@ function App() {
 }
 
 export default App;
+
