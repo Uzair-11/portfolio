@@ -92,6 +92,13 @@
   font-size: 1.5rem;
 }
 
+.subHand {
+  font-family: var(--font-hand);
+  font-size: 1.1rem;
+  color: var(--ink-light);
+  margin-top: 0.2rem;
+}
+
 .handTitle {
   font-family: var(--font-hand);
   font-size: 2rem;
@@ -104,6 +111,49 @@
   font-weight: bold;
 }
 
+.eduSection {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin: 1rem 0;
+  padding: 0.75rem 1rem;
+  border-left: 3px solid var(--ink-black);
+  background: rgba(0, 0, 0, 0.03);
+}
+
+.eduItem {
+  font-size: 0.95rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.badge {
+  background: var(--highlighter);
+  color: var(--ink-black);
+  font-size: 0.75rem;
+  font-weight: bold;
+  padding: 0.15rem 0.5rem;
+  border-radius: 4px;
+  border: 1px solid var(--ink-black);
+}
+
+.badgeCompleted {
+  background: #a3e635;
+  color: var(--ink-black);
+  font-size: 0.75rem;
+  font-weight: bold;
+  padding: 0.15rem 0.5rem;
+  border-radius: 4px;
+  border: 1px solid var(--ink-black);
+}
+
+.langBar {
+  margin-top: 0.75rem;
+  font-size: 0.95rem;
+}
+
 .techList {
   display: flex;
   flex-direction: column;
@@ -114,25 +164,40 @@
 
 @media (max-width: 992px) {
   .bentoGrid {
-    grid-template-columns: 1fr 1fr;
-  }
-  .photoCard, .techCard {
-    grid-column: span 1;
-  }
-  .aboutCard, .focusCard {
-    grid-column: span 1;
-  }
-}
-
-@media (max-width: 768px) {
-  .bentoGrid {
     grid-template-columns: 1fr;
+    gap: 2rem;
   }
-  .photoCard, .aboutCard, .techCard, .focusCard {
+  .photoCard, .techCard, .aboutCard, .focusCard {
     grid-column: span 1;
     transform: rotate(0deg);
   }
   .photoCard:hover, .aboutCard:hover, .techCard:hover, .focusCard:hover {
-    transform: translateY(-5px);
+    transform: translateY(-4px);
   }
 }
+
+@media (max-width: 768px) {
+  .bentoSection {
+    padding: 4rem 0;
+  }
+  .sectionHeading {
+    font-size: 2.2rem;
+    margin-bottom: 2.5rem;
+  }
+  .tape {
+    width: 65px;
+    height: 25px;
+    top: -12px;
+  }
+  .pin {
+    top: 10px;
+    right: 12px;
+    width: 12px;
+    height: 12px;
+  }
+  .noteCard {
+    padding: 1.25rem;
+  }
+}
+
+

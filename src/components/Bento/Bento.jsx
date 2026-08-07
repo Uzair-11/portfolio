@@ -12,6 +12,7 @@ const Bento = () => {
 
         <div ref={ref} className={`${styles.bentoGrid} ${isIntersecting ? styles.visible : ''}`}>
           
+          {/* Profile Card */}
           <div className={`sketch-box ${styles.noteCard} ${styles.photoCard}`}>
             <div className={styles.tape}></div>
             <img 
@@ -19,36 +20,51 @@ const Bento = () => {
               alt="Shaikh Mohammed Uzer" 
               className={styles.profileImage}
             />
-            <h3 className={styles.handwritten}>Yup, that's me.</h3>
+            <h3 className={styles.handwritten}>Shaikh Mohammed Uzer</h3>
+            <p className={styles.subHand}>Full Stack Developer</p>
           </div>
 
+          {/* Education & Bio */}
           <div className={`sketch-box ${styles.noteCard} ${styles.aboutCard}`}>
             <div className={styles.pin}></div>
-            <h2 className={styles.handTitle}>The Short Version</h2>
+            <h3 className={styles.handTitle}>About Me & Education</h3>
             <p className={styles.typeText}>
-              I am a Full Stack Developer located in Ahmedabad, India. I am currently pursuing my MSc in IT.
-              I don't just write code; I architect systems. Whether it is a complex relational database schema or a responsive UI, I build it from scratch.
+              I am a passionate Full Stack Developer based in India. I specialize in building complete end-to-end web applications, modular APIs, and relational/NoSQL databases.
             </p>
+            <div className={styles.eduSection}>
+              <div className={styles.eduItem}>
+                <span className={styles.badge}>Pursuing</span>
+                <strong>M.Sc. IT</strong> — LJ University <em>(Expected 2027)</em>
+              </div>
+              <div className={styles.eduItem}>
+                <span className={styles.badgeCompleted}>Completed</span>
+                <strong>B.Sc. IT</strong> — LJ University <em>(CGPA: 6.29)</em>
+              </div>
+            </div>
+            <div className={styles.langBar}>
+              <strong>🗣️ Languages Spoken:</strong> English, Hindi, Gujarati
+            </div>
           </div>
 
+          {/* Tech Stack */}
           <div className={`sketch-box ${styles.noteCard} ${styles.techCard}`}>
             <div className={styles.tape}></div>
-            <h3 className={styles.handTitle}>Tools of the Trade</h3>
+            <h3 className={styles.handTitle}>Languages & Stacks</h3>
             <ul className={styles.techList}>
-              <li><span className="highlight">Frontend:</span> React, Vite, JS, CSS</li>
-              <li><span className="highlight">Backend:</span> Node.js, Express, NestJS</li>
-              <li><span className="highlight">Database:</span> MongoDB, PostgreSQL</li>
-              <li><span className="highlight">Other:</span> Git, Docker, REST</li>
+              <li><span className="highlight">Languages:</span> HTML, CSS, JS, Python, Java, C, C++</li>
+              <li><span className="highlight">Stacks:</span> MERN, MEAN, Django, Laravel</li>
+              <li><span className="highlight">Tools:</span> GitHub, VS Code</li>
             </ul>
           </div>
 
+          {/* Current Focus */}
           <div className={`sketch-box ${styles.noteCard} ${styles.focusCard}`}>
             <div className={styles.pin}></div>
-            <h3 className={styles.handTitle}>Currently Focusing On</h3>
+            <h3 className={styles.handTitle}>Current Focus & Projects</h3>
             <p className={styles.typeText}>
-              - Message Queues (RabbitMQ)<br/>
-              - Distributed Systems<br/>
-              - Finishing AxiomERP's ledger module
+              • <strong>AxiomERP</strong>: Engineering a full-fledged MERN Enterprise Resource Planning system.<br/>
+              • <strong>JIH Sewing Classes Management System</strong>: Multi-branch operations & financial balance system.<br/>
+              • Expanding backend scalability, clean architecture, and modern UI performance.
             </p>
           </div>
 
@@ -59,3 +75,4 @@ const Bento = () => {
 };
 
 export default Bento;
+

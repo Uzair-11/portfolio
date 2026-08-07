@@ -10,36 +10,44 @@ const ProjectShowcase = ({ project }) => {
         
         <div className={styles.tape}></div>
 
-        <div className={styles.imageArea}>
-          {project.image ? (
-            <img src={project.image} alt={project.title} className={styles.projectImage} />
-          ) : (
-            <div className={styles.imagePlaceholder}>
-              <span className={styles.placeholderText}>Draw {project.title} here...</span>
-            </div>
-          )}
-          <div className={styles.imageCaption}>
-            "{project.title} - Screenshot"
-          </div>
-        </div>
-
         <div className={styles.infoArea}>
           <div className={styles.infoHeader}>
-            <h3 className={styles.title}>{project.title}</h3>
+            <div>
+              <div className={styles.titleRow}>
+                <h3 className={styles.title}>{project.title}</h3>
+                {project.status && (
+                  <span className={styles.statusBadge}>{project.status}</span>
+                )}
+              </div>
+              <p className={styles.tagline}>{project.tagline}</p>
+            </div>
             <div className={styles.links}>
-              {project.link !== '#' && (
+              {project.link && project.link !== '#' && (
                 <a href={project.link} target="_blank" rel="noopener noreferrer" className="sketch-button">
-                  Live
+                  Live Demo 🚀
                 </a>
               )}
-              <a href={project.github} target="_blank" rel="noopener noreferrer" className="sketch-button">
-                Code
-              </a>
+              {project.github && (
+                <a href={project.github} target="_blank" rel="noopener noreferrer" className="sketch-button">
+                  GitHub Code 💻
+                </a>
+              )}
             </div>
           </div>
           
           <p className={styles.description}>{project.description}</p>
           
+          {project.highlights && project.highlights.length > 0 && (
+            <div className={styles.highlightsContainer}>
+              <h4 className={styles.highlightsTitle}>📌 Key System Features:</h4>
+              <ul className={styles.highlightsList}>
+                {project.highlights.map((highlight, idx) => (
+                  <li key={idx}>{highlight}</li>
+                ))}
+              </ul>
+            </div>
+          )}
+
           <div className={styles.architectureBar}>
             <span className={styles.archLabel}>Built with:</span>
             <div className={styles.techTags}>
@@ -57,29 +65,72 @@ const ProjectShowcase = ({ project }) => {
 const Projects = () => {
   const projects = [
     {
-      id: "screenpass",
-      title: "ScreenPass",
-      description: "A comprehensive movie ticket booking platform handling concurrent reservations, role-based access for managers, and a seamless customer booking flow.",
-      tech: ["React", "Node.js", "Express", "MongoDB"],
-      link: "https://screen-pass-azure.vercel.app",
-      github: "https://github.com/Uzair-11/ScreenPass.git",
-      image: "https://ik.imagekit.io/8wguvwsuie/image.png"
-    },
-    {
       id: "axiomerp",
       title: "AxiomERP",
-      description: "An enterprise resource planning system engineered for Indian businesses. Features complex ledger accounting and strict multi-tenant data isolation.",
-      tech: ["NestJS", "PostgreSQL", "Prisma", "React"],
+      status: "⚡ Currently Working",
+      tagline: "Full-Scale Enterprise Resource Planning Platform",
+      description: "An Enterprise Resource Planning (ERP) platform engineered for business workflows, ledger accounting, and multi-tenant data architecture.",
+      highlights: [
+        "Multi-tenant data isolation & secure role-based access control (RBAC)",
+        "Double-entry financial ledger accounting with automated statement reporting",
+        "Real-time inventory management and operational workflow tracking"
+      ],
+      tech: ["MERN Stack", "React", "Node.js", "Express", "MongoDB", "PostgreSQL"],
       link: "#",
-      github: "https://github.com/Uzair-11/AxiomOS-ERP.git",
-      image: "https://ik.imagekit.io/8wguvwsuie/Screenshot%20(688).png"
+      github: "https://github.com/Uzair-11/AxiomOS-ERP.git"
+    },
+    {
+      id: "jih-sewing",
+      title: "JIH Sewing Classes Management System",
+      status: "✨ NGO Platform",
+      tagline: "Multi-Branch Operations & Financial Accounting System",
+      description: "Comprehensive administration system built to manage multi-branch vocational sewing training operations across Kalupur, Shahpur, and other NGO branches.",
+      highlights: [
+        "3-Tier Role Access: Amir-e-Muqami (Multi-Branch Exec), Supervisor, and Branch Teacher roles",
+        "Fee Concession Engine: Supports Full Fee, Concession/Partial Relief, and 100% Fee Waiver accounting",
+        "Sewing Machine Asset Ledger: Tracks machine IDs, maintenance status (Working, Repair, Replaced), and repair costs",
+        "NGO Branch Balance Engine: Computes Branch Balance = Total Fees Collected - Operating Expenses, tracking financial support balances"
+      ],
+      tech: ["MERN Stack", "Node.js", "React", "Express", "MongoDB", "REST APIs"],
+      link: "#",
+      github: "https://github.com/Uzair-11"
+    },
+    {
+      id: "screenpass",
+      title: "ScreenPass",
+      status: "🍿 Featured Project",
+      tagline: "Concurrent Movie Ticket Booking & Management Platform",
+      description: "Full-stack movie ticketing platform handling real-time seat matrix reservations, concurrent booking locks, and manager screening administration.",
+      highlights: [
+        "Interactive seat grid selection with concurrent reservation lockouts",
+        "Manager dashboard for movie scheduling, ticket tier pricing, and hall capacity control",
+        "Seamless customer checkout workflow with instant digital pass generation"
+      ],
+      tech: ["MEAN Stack", "MongoDB", "Express", "Angular", "Node.js"],
+      link: "https://screen-pass-azure.vercel.app",
+      github: "https://github.com/Uzair-11/ScreenPass.git"
+    },
+    {
+      id: "srp-rentals",
+      title: "SRP Rentals",
+      status: "🚗 Vehicle Booking",
+      tagline: "Vehicle Rental Reservation & Fleet Management System",
+      description: "Full-stack web application designed for vehicle rental cataloging, reservation scheduling, and customer booking management.",
+      highlights: [
+        "Dynamic vehicle fleet catalog with real-time availability status filtering",
+        "Customer reservation scheduling and rental duration cost calculation engine",
+        "Booking history tracking and administrative fleet controls"
+      ],
+      tech: ["MERN Stack", "React", "Node.js", "Express", "MongoDB"],
+      link: "#",
+      github: "https://github.com/Uzair-11"
     }
   ];
 
   return (
     <section id="projects" className={styles.projectsSection}>
       <div className="container">
-        <h2 className={styles.sectionHeading}>My Portfolio</h2>
+        <h2 className={styles.sectionHeading}>My Projects</h2>
         <div className={styles.projectsContainer}>
           {projects.map((project, index) => (
             <ProjectShowcase key={index} project={project} />
@@ -91,3 +142,5 @@ const Projects = () => {
 };
 
 export default Projects;
+
+

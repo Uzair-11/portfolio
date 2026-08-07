@@ -53,13 +53,29 @@
   font-size: 1.15rem;
   font-weight: bold;
   line-height: 1.6;
-  margin-bottom: 3rem;
+  margin-bottom: 2rem;
   max-width: 600px;
 }
 
+.contactDetails {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-bottom: 2.5rem;
+  font-size: 1.1rem;
+}
+
+.detailItem a {
+  color: var(--ink-black);
+  text-decoration: underline;
+}
+
 .actions {
+  display: flex;
+  gap: 1rem;
   margin-bottom: 4rem;
 }
+
 
 .doodleLinks {
   display: flex;
@@ -90,23 +106,55 @@
 }
 
 @media (max-width: 768px) {
+  .footerSection {
+    padding: 4rem 0 2rem 0;
+  }
+
   .envelope {
-    padding: 2rem;
+    padding: 1.5rem;
+    transform: rotate(0deg) !important;
+    box-shadow: 5px 5px 0px var(--ink-black);
   }
   
   .stamp {
-    top: 10px;
-    right: 10px;
+    top: 15px;
+    right: 15px;
     width: 60px;
     height: 70px;
-    font-size: 1rem;
+    font-size: 0.95rem;
+  }
+  
+  .handTitle {
+    font-size: 2.2rem;
+    max-width: 100%;
+    margin-top: 1rem;
+  }
+
+  .actions {
+    flex-direction: column;
+    width: 100%;
+    margin-bottom: 2.5rem;
+  }
+
+  .actions a {
+    width: 100%;
+  }
+
+  .doodleLinks {
+    flex-wrap: wrap;
+    gap: 1.25rem;
+  }
+
+  .detailItem {
+    word-break: break-all;
   }
   
   .signature {
     position: relative;
     bottom: auto;
     right: auto;
-    margin-top: 3rem;
+    margin-top: 2rem;
     text-align: right;
   }
 }
+

@@ -23,14 +23,15 @@ const Hero = () => {
           
           <div className={`sketch-box ${styles.descriptionBox}`}>
             <p>
-              I build web apps, APIs, and databases. 
-              No fluff, just solid engineering sketched out into reality.
+              Full Stack Developer & M.Sc. IT Student at LJ University. 
+              I build web apps, scalable backend APIs, and enterprise systems using MERN, MEAN, Django, and Laravel.
             </p>
           </div>
           
           <div className={styles.actions}>
             <a href="#projects" className="sketch-button">See My Work</a>
-            <a href="#contact" className="sketch-button">Say Hi</a>
+            <a href="#certificates" className="sketch-button">Certificates</a>
+            <a href="#contact" className="sketch-button">Contact Me</a>
           </div>
           
           <div className={styles.doodleArrow}>
@@ -46,3 +47,4 @@ const Hero = () => {
 };
 
 export default Hero;
+

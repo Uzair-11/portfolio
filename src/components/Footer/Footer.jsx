@@ -15,12 +15,25 @@ const Footer = () => {
 
           <h2 className={styles.handTitle}>Drop me a line!</h2>
           <p className={styles.typeText}>
-            I'm currently looking for new opportunities. Whether you have a question or just want to say hi, my inbox is always open.
+            I'm open for full-stack developer opportunities, software engineering roles, and project collaborations. 
+            Feel free to reach out via email or phone!
           </p>
           
+          <div className={styles.contactDetails}>
+            <div className={styles.detailItem}>
+              <strong>📧 Email:</strong> <a href="mailto:shaikhuzer7576@gmail.com">shaikhuzer7576@gmail.com</a>
+            </div>
+            <div className={styles.detailItem}>
+              <strong>📞 Phone:</strong> <a href="tel:+917984622267">+91 7984622267</a>
+            </div>
+          </div>
+
           <div className={styles.actions}>
             <a href="mailto:shaikhuzer7576@gmail.com" className="sketch-button">
-              Email Me
+              Send Email
+            </a>
+            <a href="tel:+917984622267" className="sketch-button">
+              Call Me
             </a>
           </div>
 
@@ -43,3 +56,4 @@ const Footer = () => {
 };
 
 export default Footer;
+

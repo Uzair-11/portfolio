@@ -1,0 +1,124 @@
+.certSection {
+  padding: 6rem 0;
+  position: relative;
+}
+
+.sectionHeading {
+  font-family: var(--font-hand);
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+  text-align: center;
+  text-decoration: underline;
+  text-decoration-style: wavy;
+}
+
+.sectionSub {
+  text-align: center;
+  font-family: var(--font-hand);
+  font-size: 1.25rem;
+  color: var(--ink-light);
+  margin-bottom: 4rem;
+}
+
+.certGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all var(--transition-slow);
+}
+
+.certGrid.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.certCard {
+  background: white;
+  padding: 1.75rem;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.certCard:nth-child(3n+1) { transform: rotate(-2deg); }
+.certCard:nth-child(3n+2) { transform: rotate(1deg); }
+.certCard:nth-child(3n+3) { transform: rotate(-1deg); }
+
+.certCard:hover {
+  transform: rotate(0deg) translateY(-6px) scale(1.02);
+  box-shadow: 8px 8px 0px var(--ink-black);
+}
+
+.pin {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  width: 12px;
+  height: 12px;
+  background: #3b82f6;
+  border-radius: 50%;
+  border: 2px solid var(--ink-black);
+  box-shadow: 1.5px 1.5px 0px var(--ink-black);
+}
+
+.categoryBadge {
+  align-self: flex-start;
+  font-size: 0.75rem;
+  font-weight: bold;
+  background: #fef08a;
+  color: var(--ink-black);
+  padding: 0.15rem 0.5rem;
+  border-radius: 4px;
+  border: 1px solid var(--ink-black);
+  margin-bottom: 0.75rem;
+}
+
+.certTitle {
+  font-family: var(--font-hand);
+  font-size: 1.35rem;
+  line-height: 1.3;
+  margin-bottom: 0.75rem;
+  color: var(--ink-black);
+  word-break: break-word;
+}
+
+.certIssuer {
+  font-size: 0.95rem;
+  line-height: 1.4;
+  color: var(--ink-light);
+}
+
+.certLinkWrapper {
+  margin-top: 1.25rem;
+}
+
+.certLinkWrapper a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.85rem;
+  padding: 0.4rem 0.8rem;
+  min-height: 40px;
+}
+
+@media (max-width: 768px) {
+  .certSection {
+    padding: 4rem 0;
+  }
+  .sectionHeading {
+    font-size: 2.2rem;
+  }
+  .sectionSub {
+    font-size: 1.1rem;
+    margin-bottom: 2.5rem;
+  }
+  .certCard {
+    transform: rotate(0deg) !important;
+    padding: 1.25rem;
+  }
+}
+
