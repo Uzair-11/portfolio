@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { scrollToSection } from '../../utils/scrollToSection';
 import styles from './Navbar.module.css';
 
 const Navbar = () => {
@@ -18,14 +19,15 @@ const Navbar = () => {
     setMenuOpen(!menuOpen);
   };
 
-  const closeMenu = () => {
+  const handleNavClick = (e, id) => {
     setMenuOpen(false);
+    scrollToSection(e, id);
   };
 
   return (
     <nav className={`${styles.navbar} ${scrolled ? styles.scrolled : ''}`}>
       <div className={`container ${styles.navContainer}`}>
-        <a href="#" className={styles.logo} onClick={closeMenu}>
+        <a href="#" className={styles.logo} onClick={(e) => { e.preventDefault(); setMenuOpen(false); window.scrollTo({ top: 0, behavior: 'smooth' }); }}>
           [ Uzer ]
         </a>
         
@@ -41,10 +43,10 @@ const Navbar = () => {
         </button>
 
         <ul className={`${styles.navLinks} ${menuOpen ? styles.navLinksOpen : ''}`}>
-          <li><a href="#about" className={styles.navItem} onClick={closeMenu}>About</a></li>
-          <li><a href="#projects" className={styles.navItem} onClick={closeMenu}>Projects</a></li>
-          <li><a href="#certificates" className={styles.navItem} onClick={closeMenu}>Certificates</a></li>
-          <li><a href="#contact" className={styles.navItem} onClick={closeMenu}>Contact</a></li>
+          <li><a href="#about" className={styles.navItem} onClick={(e) => handleNavClick(e, 'about')}>About</a></li>
+          <li><a href="#projects" className={styles.navItem} onClick={(e) => handleNavClick(e, 'projects')}>Projects</a></li>
+          <li><a href="#certificates" className={styles.navItem} onClick={(e) => handleNavClick(e, 'certificates')}>Certificates</a></li>
+          <li><a href="#contact" className={styles.navItem} onClick={(e) => handleNavClick(e, 'contact')}>Contact</a></li>
         </ul>
       </div>
     </nav>
@@ -52,5 +54,6 @@ const Navbar = () => {
 };
 
 export default Navbar;
+
 
 

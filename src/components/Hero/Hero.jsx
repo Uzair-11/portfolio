@@ -1,3 +1,4 @@
+import { scrollToSection } from '../../utils/scrollToSection';
 import styles from './Hero.module.css';
 
 const Hero = () => {
@@ -29,10 +30,11 @@ const Hero = () => {
           </div>
           
           <div className={styles.actions}>
-            <a href="#projects" className="sketch-button">See My Work</a>
-            <a href="#certificates" className="sketch-button">Certificates</a>
-            <a href="#contact" className="sketch-button">Contact Me</a>
+            <a href="#projects" className="sketch-button" onClick={(e) => scrollToSection(e, 'projects')}>See My Work</a>
+            <a href="#certificates" className="sketch-button" onClick={(e) => scrollToSection(e, 'certificates')}>Certificates</a>
+            <a href="#contact" className="sketch-button" onClick={(e) => scrollToSection(e, 'contact')}>Contact Me</a>
           </div>
+
           
           <div className={styles.doodleArrow}>
             <svg viewBox="0 0 100 100" className={styles.arrowSvg}>
