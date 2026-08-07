@@ -84,9 +84,10 @@ const Projects = () => {
       github: "https://github.com/Uzair-11/AxiomOS-ERP.git"
     },
     {
-      id: "jih-sewing",
-      title: "JIH Sewing Classes Management System",
+      id: "training-center-manager",
+      title: "Training Center Manager",
       status: "✨ NGO Platform",
+
       tagline: "Multi-Branch Operations & Financial Accounting System",
       description: "Comprehensive administration system built to manage multi-branch vocational sewing training operations across Kalupur, Shahpur, and other NGO branches.",
       highlights: [

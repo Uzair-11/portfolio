@@ -63,7 +63,8 @@ const Bento = () => {
             <h3 className={styles.handTitle}>Current Focus & Projects</h3>
             <p className={styles.typeText}>
               • <strong>AxiomERP</strong>: Engineering a full-fledged MERN Enterprise Resource Planning system.<br/>
-              • <strong>JIH Sewing Classes Management System</strong>: Multi-branch operations & financial balance system.<br/>
+              • <strong>Training Center Manager</strong>: Multi-branch operations & financial balance system.<br/>
+
               • Expanding backend scalability, clean architecture, and modern UI performance.
             </p>
           </div>
