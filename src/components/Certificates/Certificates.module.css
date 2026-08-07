@@ -53,6 +53,19 @@
   box-shadow: 8px 8px 0px var(--ink-black);
 }
 
+.tape {
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%) rotate(-3deg);
+  width: 60px;
+  height: 22px;
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid var(--ink-light);
+  box-shadow: 1.5px 1.5px 0px rgba(0,0,0,0.1);
+  z-index: 10;
+}
+
 .pin {
   position: absolute;
   top: 15px;
@@ -63,7 +76,9 @@
   border-radius: 50%;
   border: 2px solid var(--ink-black);
   box-shadow: 1.5px 1.5px 0px var(--ink-black);
+  z-index: 10;
 }
+
 
 .categoryBadge {
   align-self: flex-start;

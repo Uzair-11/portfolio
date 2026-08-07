@@ -4,6 +4,7 @@ import Bento from '../components/Bento/Bento';
 import Projects from '../components/Projects/Projects';
 import Certificates from '../components/Certificates/Certificates';
 import Footer from '../components/Footer/Footer';
+import SketchDivider from '../components/SketchDivider/SketchDivider';
 
 const Home = () => {
   return (
@@ -11,14 +12,19 @@ const Home = () => {
       <Navbar />
       <main>
         <Hero />
+        <SketchDivider />
         <Bento />
+        <SketchDivider />
         <Projects />
+        <SketchDivider />
         <Certificates />
       </main>
+      <SketchDivider />
       <Footer />
     </>
   );
 };
 
 export default Home;
+
 

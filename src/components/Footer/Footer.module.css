@@ -65,10 +65,17 @@
   font-size: 1.1rem;
 }
 
+.detailItem {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
 .detailItem a {
   color: var(--ink-black);
   text-decoration: underline;
 }
+
 
 .actions {
   display: flex;

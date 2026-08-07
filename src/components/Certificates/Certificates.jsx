@@ -88,8 +88,10 @@ const Certificates = () => {
 
         <div ref={ref} className={`${styles.certGrid} ${isIntersecting ? styles.visible : ''}`}>
           {certificatesList.map((cert, index) => (
-            <div key={index} className={`sketch-box ${styles.certCard}`}>
+            <div key={index} className={`sketch-box sketch-box-folded ${styles.certCard}`}>
+              <div className={styles.tape}></div>
               <div className={styles.pin}></div>
+
               <div>
                 <span className={styles.categoryBadge}>{cert.category}</span>
                 <h3 className={styles.certTitle}>{cert.title}</h3>

@@ -48,7 +48,7 @@
 .tape {
   position: absolute;
   top: -15px;
-  right: 20px;
+  right: 60px;
   width: 90px;
   height: 30px;
   background: rgba(255, 255, 255, 0.7);
@@ -57,6 +57,20 @@
   box-shadow: 2px 2px 0px rgba(0,0,0,0.1);
   z-index: 10;
 }
+
+.pin {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  width: 14px;
+  height: 14px;
+  background: #ff5e5e;
+  border-radius: 50%;
+  border: 2px solid var(--ink-black);
+  box-shadow: 1.5px 1.5px 0px var(--ink-black);
+  z-index: 10;
+}
+
 
 .infoArea {
   display: flex;

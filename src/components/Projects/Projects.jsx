@@ -1,14 +1,18 @@
 import useIntersectionObserver from '../../hooks/useIntersectionObserver';
+import useScrollTilt from '../../hooks/useScrollTilt';
 import styles from './Projects.module.css';
 
-const ProjectShowcase = ({ project }) => {
+const ProjectShowcase = ({ project, index }) => {
   const [ref, isIntersecting] = useIntersectionObserver({ threshold: 0.1 });
+  const tiltRef = useScrollTilt(index % 2 === 0 ? 1 : -1, 1.8);
 
   return (
     <div ref={ref} className={`${styles.showcaseWrapper} ${isIntersecting ? styles.visible : ''}`}>
-      <div className={`sketch-box ${styles.showcaseCard}`}>
-        
+      <div ref={tiltRef} className={`sketch-box sketch-box-folded ${styles.showcaseCard}`}>
         <div className={styles.tape}></div>
+        <div className={styles.pin}></div>
+
+
 
         <div className={styles.infoArea}>
           <div className={styles.infoHeader}>
@@ -133,8 +137,9 @@ const Projects = () => {
         <h2 className={styles.sectionHeading}>My Projects</h2>
         <div className={styles.projectsContainer}>
           {projects.map((project, index) => (
-            <ProjectShowcase key={index} project={project} />
+            <ProjectShowcase key={index} project={project} index={index} />
           ))}
+
         </div>
       </div>
     </section>
