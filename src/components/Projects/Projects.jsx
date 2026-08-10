@@ -81,8 +81,9 @@ const Projects = () => {
       ],
       tech: ["MERN Stack", "React", "Node.js", "Express", "MongoDB", "PostgreSQL"],
       link: "#",
-      github: "https://github.com/Uzair-11/AxiomOS-ERP.git"
+      github: "https://github.com/Uzair-11/AxiomERP.git"
     },
+
     {
       id: "training-center-manager",
       title: "Training Center Manager",
