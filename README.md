@@ -13,7 +13,8 @@
 - 📜 **12 Verified Certifications Grid**: Interactive sketchbook cards linking directly to verified PDF credentials from IBM, Google, University at Buffalo, UC Santa Cruz, and more.
 - 💻 **Featured Full-Stack Projects**:
   - **AxiomERP**: Full-scale MERN Enterprise Resource Planning system with multi-tenant data architecture and financial double-entry ledgers.
-  - **Training Center Manager**: Multi-branch NGO operations and financial accounting system with 3-tier role management, course fee relief tracking, and machine maintenance ledgers.
+  - **Training Center Manager**: Full-stack multi-branch NGO operations and financial accounting system ([Live Demo](https://class-management-umber.vercel.app/) | [GitHub Repo](https://github.com/Uzair-11/class_management)). Features 4-tier RBAC, recurring fee engine, attendance locking, asset ledgers, certificate generation, and 114 automated tests.
+
   - **ScreenPass**: MEAN stack movie ticket booking platform with concurrent seat reservation locks and live demo.
   - **SRP Rentals**: MERN stack vehicle rental reservation & fleet management platform.
 - 📱 **100% Mobile Responsive**: Fluid `clamp()` hero typography, animated mobile hamburger menu drawer, responsive auto-fit grids, and 44px+ touch targets.

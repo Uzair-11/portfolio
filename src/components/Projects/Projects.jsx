@@ -87,19 +87,23 @@ const Projects = () => {
       id: "training-center-manager",
       title: "Training Center Manager",
       status: "✨ NGO Platform",
-
       tagline: "Multi-Branch Operations & Financial Accounting System",
-      description: "Comprehensive administration system built to manage multi-branch vocational sewing training operations across Kalupur, Shahpur, and other NGO branches.",
+      description: "Full-stack administration system for managing multi-branch vocational sewing training operations — built independently for a real NGO use case, covering student lifecycle, staff hierarchy, and branch-level financial accounting.",
       highlights: [
-        "3-Tier Role Access: Amir-e-Muqami (Multi-Branch Exec), Supervisor, and Branch Teacher roles",
-        "Fee Concession Engine: Supports Full Fee, Concession/Partial Relief, and 100% Fee Waiver accounting",
-        "Sewing Machine Asset Ledger: Tracks machine IDs, maintenance status (Working, Repair, Replaced), and repair costs",
-        "NGO Branch Balance Engine: Computes Branch Balance = Total Fees Collected - Operating Expenses, tracking financial support balances"
+        "4-Tier Role Access: Admin, Amir-e-Muqami (multi-branch exec), Supervisor, and Branch Teacher — each scoped to their own permissions and branch access",
+        "Recurring Fee Engine: Monthly billing cycles with Full Fee, Partial Relief, and 100% Waiver handling, auto-generated per student",
+        "Attendance System: Daily tracking with holiday blocking, server-enforced date locking, and a student leave request/approval workflow",
+        "Sewing Machine Asset Ledger: Tracks machine status and maintenance, with repair costs auto-linked to branch expenses",
+        "Branch Finance Engine: Computes Branch Balance = Fees Collected − Operating Expenses, with NGO financial support accounting",
+        "Certificate System: Configurable certificate templates with dynamic field positioning and auto-generation on exam completion",
+        "Security: JWT access/refresh token auth, RBAC with branch-scoped access control, input validation, rate limiting",
+        "Testing: 97 backend (Jest/Supertest) + 17 frontend (Playwright) automated tests"
       ],
-      tech: ["MERN Stack", "Node.js", "React", "Express", "MongoDB", "REST APIs"],
-      link: "#",
-      github: "https://github.com/Uzair-11"
+      tech: ["React", "Node.js", "Express", "PostgreSQL", "JWT"],
+      link: "https://class-management-umber.vercel.app/",
+      github: "https://github.com/Uzair-11/class_management.git"
     },
+
     {
       id: "screenpass",
       title: "ScreenPass",
