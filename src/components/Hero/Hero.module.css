@@ -70,6 +70,36 @@
   z-index: 1;
 }
 
+.credentialPills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+  margin-bottom: 2rem;
+  max-width: 750px;
+}
+
+.credPill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.35rem 0.8rem;
+  background: #ffffff;
+  color: var(--ink-black);
+  border: 1.5px solid var(--ink-black);
+  border-radius: 999px;
+  font-family: var(--font-type);
+  font-size: 0.82rem;
+  font-weight: 700;
+  box-shadow: 2.5px 2.5px 0px var(--ink-black);
+  transition: transform var(--transition-bounce), box-shadow 0.15s ease;
+}
+
+.credPill:hover {
+  transform: translateY(-2px);
+  box-shadow: 4px 4px 0px var(--ink-black);
+  background: var(--highlighter-subtle);
+}
+
 .descriptionBox {
   padding: 1.75rem;
   background: white;

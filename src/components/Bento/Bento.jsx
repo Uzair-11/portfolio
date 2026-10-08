@@ -49,23 +49,25 @@ const Bento = () => {
           {/* Tech Stack */}
           <div className={`sketch-box ${styles.noteCard} ${styles.techCard}`}>
             <div className={styles.tape}></div>
-            <h3 className={styles.handTitle}>Languages & Stacks</h3>
+            <h3 className={styles.handTitle}>Engineering Stack</h3>
             <ul className={styles.techList}>
-              <li><span className="highlight">Languages:</span> HTML, CSS, JS, Python, Java, C, C++</li>
-              <li><span className="highlight">Stacks:</span> MERN, MEAN, Django, Laravel</li>
-              <li><span className="highlight">Tools:</span> GitHub, VS Code</li>
+              <li><span className="highlight">Languages:</span> TypeScript, JavaScript, Python, Java, C, C++</li>
+              <li><span className="highlight">AI & Backend:</span> PyTorch, FastAPI, Node.js, Express, Django</li>
+              <li><span className="highlight">Frontend & Mobile:</span> React 18, React Native (Expo), Vite, Tailwind</li>
+              <li><span className="highlight">Databases:</span> PostgreSQL, MongoDB Atlas, SQLite, Redis</li>
+              <li><span className="highlight">DevOps & Testing:</span> Docker, Jest, Supertest, Playwright, Git</li>
             </ul>
           </div>
 
           {/* Current Focus */}
           <div className={`sketch-box ${styles.noteCard} ${styles.focusCard}`}>
             <div className={styles.pin}></div>
-            <h3 className={styles.handTitle}>Current Focus & Projects</h3>
+            <h3 className={styles.handTitle}>Current Focus & Flagships</h3>
             <p className={styles.typeText}>
-              • <strong>AxiomERP</strong>: Engineering a full-fledged MERN Enterprise Resource Planning system.<br/>
-              • <strong>Training Center Manager</strong>: Multi-branch operations & financial balance system.<br/>
-
-              • Expanding backend scalability, clean architecture, and modern UI performance.
+              • <strong>VitaLens</strong>: Multimodal clinical OCR & PyTorch diagnostic specialty classification.<br/>
+              • <strong>AxiomERP</strong>: Enterprise procurement, automated 3-way matching, & double-entry inventory ledger.<br/>
+              • <strong>Training Center Manager</strong>: Live NGO operations with 4-tier RBAC & automated fee cycles.<br/>
+              • Deepening distributed backend resilience, AI agent workflows, and production testing.
             </p>
           </div>
 

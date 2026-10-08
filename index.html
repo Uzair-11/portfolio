@@ -1,20 +1,2532 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/png" href="https://ik.imagekit.io/8wguvwsuie/Gemini_Generated_Image_tcygbztcygbztcyg.png?updatedAt=1771352163024" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Shaikh Mohammed Uzer - Full Stack Developer Portfolio" />
-    <title>Shaikh Mohammed Uzer</title>
-    
-    <!-- Google Fonts: Inter and Outfit -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="./src/main.jsx"></script>
-  </body>
-</html>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shaikh Mohammed Uzer — Full Stack Developer & Editorial Portfolio</title>
+  
+  <!-- SEO & Social Meta Tags -->
+  <meta name="description" content="Editorial Portfolio of Shaikh Mohammed Uzer — Full Stack Developer specializing in clean architecture, secure APIs, MERN, MEAN, Django, and Laravel." />
+  <meta name="author" content="Shaikh Mohammed Uzer" />
+  <meta name="keywords" content="Shaikh Mohammed Uzer, Full Stack Developer, Software Engineer, Portfolio, MERN, MEAN, Django, Laravel, PostgreSQL, React, Node.js" />
+  
+  <!-- Open Graph -->
+  <meta property="og:title" content="Shaikh Mohammed Uzer — Full Stack Developer Portfolio" />
+  <meta property="og:description" content="I build full stack web apps with clean architecture and secure APIs." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://github.com/Uzair-11" />
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%230a0506'/><text x='50' y='65' font-size='50' font-family='serif' fill='%23e3c4b0' text-anchor='middle'>U</text></svg>" />
 
+  <!-- Google Fonts: Bodoni Moda (Editorial Serif), Manrope (Clean Body), Pinyon Script (Burgundy Signature) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Manrope:wght@300;400;500;600;700;800&family=Pinyon+Script&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ==========================================================================
+       1. CSS RESET & COLOR SYSTEM
+       ========================================================================== */
+    :root {
+      --bg-void: #0a0506;
+      --bg-wine: #1c060b;
+      --bg-wine-card: #150609;
+      --bg-wine-hover: #23080e;
+      --deep-wine: #2a0a10;
+      --burgundy: #5a0f1c;
+      --burgundy-bright: #7a1527;
+      --burgundy-glow: rgba(90, 15, 28, 0.45);
+      --muted-rose: #b5495b;
+      --rose-subtle: rgba(181, 73, 91, 0.2);
+      --rose-border: rgba(181, 73, 91, 0.28);
+      --pale-rose-beige: #e3c4b0;
+      --beige-subtle: rgba(227, 196, 176, 0.7);
+      --beige-dim: rgba(227, 196, 176, 0.35);
+
+      --font-serif: 'Bodoni Moda', Georgia, serif;
+      --font-sans: 'Manrope', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      --font-script: 'Pinyon Script', cursive;
+
+      --transition-smooth: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+      --transition-editorial: all 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      background-color: var(--bg-void);
+      color: var(--beige-subtle);
+      font-family: var(--font-sans);
+      font-size: 16px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    body {
+      background-color: var(--bg-void);
+      overflow-x: hidden;
+      position: relative;
+      min-height: 100vh;
+      selection-background-color: var(--burgundy);
+      selection-color: var(--pale-rose-beige);
+    }
+
+    ::selection {
+      background: var(--burgundy);
+      color: var(--pale-rose-beige);
+    }
+
+    /* Subtle Film Grain & Vignette Overlay */
+    .film-grain {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      pointer-events: none;
+      z-index: 999;
+      opacity: 0.045;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+    }
+
+    .vignette-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      pointer-events: none;
+      z-index: 1;
+      background: radial-gradient(ellipse at 50% 30%, transparent 40%, rgba(10, 5, 6, 0.85) 95%);
+    }
+
+    /* Botanical Ambient Flowers at Page Edges */
+    .botanical-bg {
+      position: absolute;
+      pointer-events: none;
+      z-index: 0;
+      opacity: 0.08;
+      filter: blur(2px);
+    }
+
+    .flower-top-left {
+      top: -60px;
+      left: -80px;
+      width: 380px;
+      height: 380px;
+      transform: rotate(-25deg);
+    }
+
+    .flower-mid-right {
+      top: 1400px;
+      right: -100px;
+      width: 440px;
+      height: 440px;
+      transform: rotate(35deg);
+    }
+
+    .flower-bottom-left {
+      bottom: 200px;
+      left: -90px;
+      width: 400px;
+      height: 400px;
+      transform: rotate(15deg);
+    }
+
+    /* Layout Container */
+    .container {
+      width: 100%;
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 2rem;
+      position: relative;
+      z-index: 2;
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        padding: 0 1.25rem;
+      }
+    }
+
+    /* Typography Utilities */
+    h1, h2, h3, h4 {
+      font-family: var(--font-serif);
+      color: var(--pale-rose-beige);
+      font-weight: 500;
+      letter-spacing: -0.02em;
+    }
+
+    .editorial-script {
+      font-family: var(--font-script);
+      font-weight: 400;
+      font-style: normal;
+      color: var(--muted-rose);
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+      transition: var(--transition-smooth);
+    }
+
+    /* Accessibility Focus Outline */
+    a:focus-visible, button:focus-visible {
+      outline: 2px solid var(--muted-rose);
+      outline-offset: 4px;
+    }
+
+    /* ==========================================================================
+       2. TOP BAR & EDITORIAL LABELS
+       ========================================================================== */
+    .editorial-header {
+      padding: 1.75rem 0 1rem 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid var(--rose-border);
+      position: relative;
+      z-index: 10;
+    }
+
+    .corner-label {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.22em;
+      color: var(--pale-rose-beige);
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .corner-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--muted-rose);
+      display: inline-block;
+    }
+
+    /* ==========================================================================
+       3. HERO SECTION (CINEMATIC COVER)
+       ========================================================================== */
+    .hero-section {
+      position: relative;
+      min-height: 95vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding-top: 1.5rem;
+      overflow: hidden;
+    }
+
+    /* Full-width Magazine "PORTFOLIO" Headline Behind Photo */
+    .hero-headline-wrap {
+      position: absolute;
+      top: 2.2rem;
+      left: 0;
+      right: 0;
+      width: 100%;
+      text-align: center;
+      overflow: hidden;
+      z-index: 1;
+      user-select: none;
+      padding: 0 1rem;
+      pointer-events: none;
+      box-sizing: border-box;
+      animation: riseHeadline 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+
+    .hero-headline {
+      font-family: var(--font-serif);
+      font-size: clamp(2.3rem, 11.2vw, 10.8rem);
+      font-weight: 700;
+      line-height: 0.88;
+      letter-spacing: 0.03em;
+      color: var(--pale-rose-beige);
+      text-transform: uppercase;
+      display: inline-block;
+      transform: scaleY(1.3);
+      transform-origin: center top;
+      text-shadow: 0 15px 40px rgba(0, 0, 0, 0.8), 0 0 80px rgba(90, 15, 28, 0.35);
+      white-space: nowrap;
+      max-width: 100%;
+    }
+
+    /* Centered Cutout Stage - Sitting directly on page background */
+    .hero-stage {
+      position: relative;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+      z-index: 2;
+      pointer-events: none;
+      min-height: 80vh;
+    }
+
+    /* Soft Burgundy Glow behind head */
+    .hero-head-glow {
+      position: absolute;
+      top: 10%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: min(520px, 85vw);
+      height: min(520px, 85vw);
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(90, 15, 28, 0.42) 0%, rgba(90, 15, 28, 0.18) 50%, transparent 72%);
+      filter: blur(48px);
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    /* Transparent Cutout Image - No box, no frame, 80vh tall, bottom fade */
+    .hero-cutout-img {
+      position: relative;
+      z-index: 2;
+      height: 80vh;
+      max-height: 880px;
+      min-height: 520px;
+      width: auto;
+      max-width: 95vw;
+      object-fit: contain;
+      object-position: bottom center;
+      display: block;
+      margin: 0 auto;
+      filter: contrast(104%) brightness(0.98);
+      /* Bottom gradient fade blending into next section */
+      mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 75%, rgba(0,0,0,0) 100%);
+      -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 75%, rgba(0,0,0,0) 100%);
+      animation: fadeInPhoto 1.4s cubic-bezier(0.16, 1, 0.3, 1) 0.15s forwards;
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    /* Desktop 3-Column Editorial Overlay */
+    .hero-editorial-overlay {
+      position: absolute;
+      inset: 0;
+      display: grid;
+      grid-template-columns: 1fr min(440px, 34vw) 1fr;
+      align-items: center;
+      z-index: 3;
+      pointer-events: none;
+      padding: 4.5rem 0 2rem 0;
+    }
+
+    .hero-col-left, .hero-col-right {
+      pointer-events: auto;
+    }
+
+    /* Left Column: Tagline, Signature, Location */
+    .hero-col-left {
+      display: flex;
+      flex-direction: column;
+      gap: 1.6rem;
+      max-width: 440px;
+      justify-self: start;
+      text-align: left;
+    }
+
+    /* Center Spacer keeping center clear for face */
+    .hero-col-center {
+      height: 100%;
+      pointer-events: none;
+    }
+
+    /* Right Column: Pill status, Resume, Socials */
+    .hero-col-right {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 2rem;
+      max-width: 400px;
+      justify-self: end;
+      text-align: right;
+    }
+
+    .hero-actions-right {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 1.25rem;
+    }
+
+    .pill-status {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      padding: 0.45rem 1.1rem;
+      background: rgba(42, 10, 16, 0.85);
+      border: 1px solid var(--rose-border);
+      border-radius: 999px;
+      width: fit-content;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--pale-rose-beige);
+      backdrop-filter: blur(10px);
+    }
+
+    .pill-pulse {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #34d399;
+      box-shadow: 0 0 10px #34d399;
+      animation: pulseGreen 2s infinite;
+    }
+
+    .hero-tagline {
+      font-family: var(--font-serif);
+      font-size: clamp(1.6rem, 2.8vw, 2.4rem);
+      font-weight: 400;
+      line-height: 1.28;
+      color: var(--pale-rose-beige);
+      border-left: 2px solid var(--burgundy);
+      padding-left: 1.25rem;
+    }
+
+    .hero-signature-wrap {
+      display: flex;
+      flex-direction: column;
+      gap: 0.15rem;
+    }
+
+    .signature-name {
+      font-family: var(--font-script);
+      font-size: 3.8rem;
+      color: var(--muted-rose);
+      line-height: 1;
+      margin-left: -0.25rem;
+      text-shadow: 0 0 25px rgba(181, 73, 91, 0.35);
+    }
+
+    .signature-sub {
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.22em;
+      color: var(--beige-dim);
+    }
+
+    .hero-location {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.85rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--beige-subtle);
+    }
+
+    .hero-location svg {
+      color: var(--muted-rose);
+    }
+
+    /* Actions: Buttons & Icons */
+    .btn-editorial {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 0.85rem 1.85rem;
+      background: var(--burgundy);
+      color: var(--pale-rose-beige);
+      font-family: var(--font-sans);
+      font-size: 0.85rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      border: 1px solid var(--muted-rose);
+      border-radius: 4px;
+      cursor: pointer;
+      box-shadow: 0 8px 24px rgba(90, 15, 28, 0.45);
+      transition: var(--transition-smooth);
+    }
+
+    .btn-editorial:hover {
+      background: var(--burgundy-bright);
+      transform: translateY(-2px);
+      box-shadow: 0 12px 30px rgba(122, 21, 39, 0.6);
+      color: #ffffff;
+    }
+
+    .hero-social-links {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .social-icon-btn {
+      width: 44px;
+      height: 44px;
+      border-radius: 4px;
+      border: 1px solid var(--rose-border);
+      background: rgba(42, 10, 16, 0.5);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--pale-rose-beige);
+      transition: var(--transition-smooth);
+    }
+
+    .social-icon-btn:hover {
+      background: var(--burgundy);
+      border-color: var(--muted-rose);
+      color: #ffffff;
+      transform: translateY(-2px);
+    }
+
+    /* ==========================================================================
+       4. SECTION HEADERS
+       ========================================================================== */
+    .section-wrap {
+      padding: 6.5rem 0;
+      position: relative;
+    }
+
+    .section-header-editorial {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      padding-bottom: 1.5rem;
+      border-bottom: 1px solid var(--rose-border);
+      margin-bottom: 3.5rem;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+    }
+
+    .section-num-tag {
+      font-size: 0.75rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--muted-rose);
+      font-weight: 700;
+      margin-bottom: 0.4rem;
+      display: block;
+    }
+
+    .section-title {
+      font-size: clamp(2.2rem, 4.5vw, 3.4rem);
+      font-weight: 400;
+      line-height: 1.1;
+      color: var(--pale-rose-beige);
+    }
+
+    .section-desc-right {
+      max-width: 420px;
+      font-size: 0.95rem;
+      color: var(--beige-dim);
+      line-height: 1.6;
+    }
+
+    /* ==========================================================================
+       5. SELECTED PROJECTS SECTION
+       ========================================================================== */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2.25rem;
+    }
+
+    @media (max-width: 992px) {
+      .projects-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .project-card {
+      background: var(--bg-wine-card);
+      border: 1px solid var(--rose-border);
+      border-radius: 8px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      transition: var(--transition-editorial);
+    }
+
+    .project-card:hover {
+      border-color: var(--muted-rose);
+      box-shadow: 0 20px 45px rgba(0, 0, 0, 0.7), 0 0 35px rgba(90, 15, 28, 0.3);
+      transform: translateY(-5px);
+    }
+
+    .card-meta-bar {
+      padding: 1.2rem 1.6rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid rgba(181, 73, 91, 0.15);
+      background: rgba(28, 6, 11, 0.4);
+    }
+
+    .project-index {
+      font-family: var(--font-serif);
+      font-size: 1.3rem;
+      color: var(--muted-rose);
+      font-weight: 600;
+    }
+
+    .project-type-tag {
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--pale-rose-beige);
+      background: rgba(90, 15, 28, 0.4);
+      padding: 0.3rem 0.75rem;
+      border: 1px solid rgba(181, 73, 91, 0.3);
+      border-radius: 4px;
+    }
+
+    /* CSS Dark UI Mockup Windows */
+    .mockup-frame {
+      width: 100%;
+      height: 230px;
+      background: #0d0608;
+      border-bottom: 1px solid var(--rose-border);
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .mockup-chrome {
+      height: 30px;
+      background: #14070a;
+      border-bottom: 1px solid rgba(181, 73, 91, 0.15);
+      display: flex;
+      align-items: center;
+      padding: 0 1rem;
+      gap: 6px;
+    }
+
+    .mockup-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: rgba(181, 73, 91, 0.4);
+    }
+
+    .mockup-dot:nth-child(1) { background: #7a1527; }
+    .mockup-dot:nth-child(2) { background: #b5495b; }
+    .mockup-dot:nth-child(3) { background: #4a121c; }
+
+    .mockup-url-bar {
+      font-size: 0.65rem;
+      letter-spacing: 0.05em;
+      color: var(--beige-dim);
+      margin-left: 0.75rem;
+      background: #0a0405;
+      padding: 2px 12px;
+      border-radius: 3px;
+      border: 1px solid rgba(181, 73, 91, 0.15);
+    }
+
+    .mockup-canvas {
+      flex: 1;
+      padding: 1.25rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      position: relative;
+      background: radial-gradient(circle at 80% 20%, rgba(90, 15, 28, 0.25) 0%, transparent 60%), #0d0608;
+    }
+
+    /* Mockup 1: AxiomERP Ledger */
+    .erp-stats-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.6rem;
+    }
+
+    .erp-stat-box {
+      background: rgba(28, 6, 11, 0.7);
+      border: 1px solid rgba(181, 73, 91, 0.2);
+      border-radius: 4px;
+      padding: 0.5rem;
+    }
+
+    .erp-stat-box span {
+      display: block;
+      font-size: 0.6rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--beige-dim);
+    }
+
+    .erp-stat-box strong {
+      font-size: 0.85rem;
+      color: var(--pale-rose-beige);
+      font-family: var(--font-serif);
+    }
+
+    .erp-ledger-table {
+      background: rgba(20, 6, 9, 0.6);
+      border: 1px solid rgba(181, 73, 91, 0.2);
+      border-radius: 4px;
+      padding: 0.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
+      font-size: 0.65rem;
+    }
+
+    .erp-table-row {
+      display: flex;
+      justify-content: space-between;
+      color: var(--beige-subtle);
+      border-bottom: 1px dashed rgba(181, 73, 91, 0.15);
+      padding-bottom: 0.2rem;
+    }
+
+    .erp-status-badge {
+      color: #34d399;
+      background: rgba(52, 211, 153, 0.1);
+      padding: 1px 6px;
+      border-radius: 3px;
+    }
+
+    /* Mockup 2: Training Center Manager */
+    .ngo-kpi-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(42, 10, 16, 0.6);
+      padding: 0.5rem 0.75rem;
+      border-radius: 4px;
+      border: 1px solid rgba(181, 73, 91, 0.25);
+    }
+
+    .ngo-role-badge {
+      font-size: 0.65rem;
+      color: var(--pale-rose-beige);
+      background: var(--burgundy);
+      padding: 2px 8px;
+      border-radius: 3px;
+      letter-spacing: 0.05em;
+    }
+
+    .ngo-test-badge {
+      font-size: 0.65rem;
+      color: #34d399;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .ngo-attendance-grid {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 4px;
+      margin-top: 0.25rem;
+    }
+
+    .attendance-cell {
+      height: 24px;
+      border-radius: 3px;
+      background: rgba(181, 73, 91, 0.15);
+      border: 1px solid rgba(181, 73, 91, 0.25);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.6rem;
+      color: var(--pale-rose-beige);
+    }
+
+    .attendance-cell.checked {
+      background: rgba(90, 15, 28, 0.6);
+      border-color: var(--muted-rose);
+      color: #34d399;
+    }
+
+    /* Mockup 3: ScreenPass Cinema Grid */
+    .cinema-screen {
+      width: 70%;
+      height: 12px;
+      margin: 0 auto 0.5rem auto;
+      border-top: 2px solid var(--muted-rose);
+      border-radius: 50% 50% 0 0;
+      box-shadow: 0 -4px 12px rgba(181, 73, 91, 0.4);
+    }
+
+    .seat-grid {
+      display: grid;
+      grid-template-columns: repeat(8, 1fr);
+      gap: 6px;
+      max-width: 220px;
+      margin: 0 auto;
+    }
+
+    .seat {
+      height: 14px;
+      background: rgba(181, 73, 91, 0.2);
+      border: 1px solid rgba(181, 73, 91, 0.35);
+      border-radius: 3px;
+    }
+
+    .seat.selected {
+      background: var(--pale-rose-beige);
+      border-color: #ffffff;
+      box-shadow: 0 0 8px rgba(227, 196, 176, 0.6);
+    }
+
+    .seat.reserved {
+      background: var(--burgundy);
+      border-color: var(--muted-rose);
+    }
+
+    .ticket-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: auto;
+      font-size: 0.65rem;
+      padding-top: 0.3rem;
+      border-top: 1px dashed rgba(181, 73, 91, 0.2);
+      color: var(--pale-rose-beige);
+    }
+
+    /* Mockup 4: SRP Rentals Fleet */
+    .fleet-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.65rem;
+      color: var(--pale-rose-beige);
+    }
+
+    .fleet-vehicle-card {
+      background: rgba(28, 6, 11, 0.8);
+      border: 1px solid rgba(181, 73, 91, 0.25);
+      border-radius: 4px;
+      padding: 0.6rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .calc-slider {
+      width: 100%;
+      height: 4px;
+      background: rgba(181, 73, 91, 0.2);
+      border-radius: 2px;
+      position: relative;
+      margin-top: 0.6rem;
+    }
+
+    .calc-slider-fill {
+      width: 65%;
+      height: 100%;
+      background: var(--muted-rose);
+      border-radius: 2px;
+    }
+
+    /* Project Details & Body */
+    .card-body {
+      padding: 1.75rem;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      gap: 1.25rem;
+    }
+
+    .project-title {
+      font-size: 1.65rem;
+      font-weight: 500;
+      color: var(--pale-rose-beige);
+      line-height: 1.2;
+    }
+
+    .project-desc {
+      font-size: 0.9rem;
+      color: var(--beige-subtle);
+      line-height: 1.6;
+      flex: 1;
+    }
+
+    .tag-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .tag-pill {
+      font-size: 0.72rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 0.25rem 0.65rem;
+      background: rgba(42, 10, 16, 0.7);
+      border: 1px solid rgba(181, 73, 91, 0.25);
+      border-radius: 3px;
+      color: var(--pale-rose-beige);
+    }
+
+    .card-links {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding-top: 0.75rem;
+      border-top: 1px solid rgba(181, 73, 91, 0.15);
+    }
+
+    .btn-card-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.78rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--pale-rose-beige);
+      padding: 0.5rem 1rem;
+      background: rgba(90, 15, 28, 0.4);
+      border: 1px solid var(--rose-border);
+      border-radius: 4px;
+      transition: var(--transition-smooth);
+    }
+
+    .btn-card-link:hover {
+      background: var(--burgundy);
+      border-color: var(--muted-rose);
+      color: #ffffff;
+    }
+
+    .btn-card-demo {
+      background: var(--burgundy);
+      border-color: var(--muted-rose);
+    }
+
+    .btn-card-demo:hover {
+      background: var(--burgundy-bright);
+    }
+
+    /* ==========================================================================
+       6. MY PROCESS SECTION
+       ========================================================================== */
+    .process-layout {
+      display: grid;
+      grid-template-columns: 1.25fr 1fr;
+      gap: 3.5rem;
+      align-items: center;
+    }
+
+    @media (max-width: 900px) {
+      .process-layout {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .steps-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .step-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 1.5rem;
+      padding: 1.25rem 1.5rem;
+      background: var(--bg-wine-card);
+      border: 1px solid var(--rose-border);
+      border-radius: 6px;
+      transition: var(--transition-smooth);
+    }
+
+    .step-item:hover {
+      border-color: var(--muted-rose);
+      transform: translateX(6px);
+      background: var(--bg-wine-hover);
+    }
+
+    .step-number {
+      font-family: var(--font-serif);
+      font-size: 1.5rem;
+      color: var(--muted-rose);
+      line-height: 1;
+      font-weight: 600;
+    }
+
+    .step-content h3 {
+      font-size: 1.2rem;
+      color: var(--pale-rose-beige);
+      margin-bottom: 0.25rem;
+    }
+
+    .step-content p {
+      font-size: 0.88rem;
+      color: var(--beige-subtle);
+      line-height: 1.5;
+    }
+
+    /* Process Circular Flower Frame */
+    .process-visual-wrap {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 1.75rem;
+    }
+
+    .circular-frame {
+      width: 280px;
+      height: 280px;
+      border-radius: 50%;
+      border: 2px solid var(--muted-rose);
+      background: radial-gradient(circle, rgba(90, 15, 28, 0.45) 0%, rgba(28, 6, 11, 0.8) 70%);
+      box-shadow: 0 0 50px rgba(90, 15, 28, 0.4), inset 0 0 30px rgba(90, 15, 28, 0.5);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+
+    .circular-frame::before {
+      content: '';
+      position: absolute;
+      inset: -10px;
+      border-radius: 50%;
+      border: 1px dashed rgba(181, 73, 91, 0.35);
+      animation: spinSlow 35s linear infinite;
+    }
+
+    .frame-flower-svg {
+      width: 170px;
+      height: 170px;
+      color: var(--muted-rose);
+      filter: drop-shadow(0 0 15px rgba(181, 73, 91, 0.5));
+    }
+
+    .frame-quote {
+      font-family: var(--font-serif);
+      font-size: 1.25rem;
+      font-style: italic;
+      color: var(--pale-rose-beige);
+      max-width: 320px;
+      line-height: 1.4;
+    }
+
+    /* ==========================================================================
+       7. SKILLS AND TOOLS SECTION
+       ========================================================================== */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(175px, 1fr));
+      gap: 1.25rem;
+    }
+
+    .skill-tile {
+      background: var(--bg-wine-card);
+      border: 1px solid var(--rose-border);
+      border-radius: 6px;
+      padding: 1.4rem 1.2rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 0.85rem;
+      transition: var(--transition-smooth);
+    }
+
+    .skill-tile:hover {
+      border-color: var(--muted-rose);
+      background: var(--bg-wine-hover);
+      transform: translateY(-4px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6), 0 0 20px rgba(90, 15, 28, 0.3);
+    }
+
+    .skill-icon-wrap {
+      width: 44px;
+      height: 44px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--pale-rose-beige);
+    }
+
+    .skill-tile:hover .skill-icon-wrap {
+      color: var(--muted-rose);
+    }
+
+    .skill-name {
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      color: var(--pale-rose-beige);
+    }
+
+    .skill-category-tag {
+      font-size: 0.65rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--beige-dim);
+    }
+
+    /* ==========================================================================
+       8. CERTIFICATES SECTION
+       ========================================================================== */
+    .cert-groups {
+      display: flex;
+      flex-direction: column;
+      gap: 3.5rem;
+    }
+
+    .cert-group {
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+
+    .cert-issuer-title {
+      font-family: var(--font-serif);
+      font-size: 1.35rem;
+      color: var(--muted-rose);
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .cert-issuer-title::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(90deg, rgba(181, 73, 91, 0.3) 0%, transparent 100%);
+    }
+
+    .cert-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+      gap: 1.25rem;
+    }
+
+    .cert-card {
+      background: var(--bg-wine-card);
+      border: 1px solid var(--rose-border);
+      border-radius: 6px;
+      padding: 1.35rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 1.25rem;
+      transition: var(--transition-smooth);
+    }
+
+    .cert-card:hover {
+      border-color: var(--muted-rose);
+      transform: translateY(-3px);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.6);
+    }
+
+    .cert-header {
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+
+    .cert-title {
+      font-size: 1.05rem;
+      font-weight: 500;
+      color: var(--pale-rose-beige);
+      line-height: 1.3;
+    }
+
+    .cert-issuer-label {
+      font-size: 0.75rem;
+      color: var(--beige-dim);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+
+    .cert-view-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--pale-rose-beige);
+      padding: 0.45rem 0.95rem;
+      background: rgba(90, 15, 28, 0.4);
+      border: 1px solid var(--rose-border);
+      border-radius: 4px;
+      width: fit-content;
+      transition: var(--transition-smooth);
+    }
+
+    .cert-view-btn:hover {
+      background: var(--burgundy);
+      border-color: var(--muted-rose);
+      color: #ffffff;
+    }
+
+    /* ==========================================================================
+       9. NUMBERS STRIP
+       ========================================================================== */
+    .numbers-strip {
+      background: linear-gradient(180deg, var(--deep-wine) 0%, rgba(10, 5, 6, 0.9) 100%);
+      border-top: 1px solid var(--rose-border);
+      border-bottom: 1px solid var(--rose-border);
+      padding: 4.5rem 0;
+      position: relative;
+    }
+
+    .numbers-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2rem;
+      text-align: center;
+    }
+
+    @media (max-width: 768px) {
+      .numbers-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2.5rem;
+      }
+    }
+
+    .number-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .number-val {
+      font-family: var(--font-serif);
+      font-size: clamp(3rem, 6vw, 4.8rem);
+      font-weight: 700;
+      color: var(--pale-rose-beige);
+      line-height: 1;
+      text-shadow: 0 0 35px rgba(181, 73, 91, 0.35);
+    }
+
+    .number-label {
+      font-size: 0.82rem;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: var(--muted-rose);
+      font-weight: 600;
+    }
+
+    /* ==========================================================================
+       10. CLOSING BLOCK & EDITORIAL SIGN-OFF
+       ========================================================================== */
+    .closing-section {
+      padding: 7rem 0 3rem 0;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .closing-card {
+      background: linear-gradient(135deg, rgba(42, 10, 16, 0.7) 0%, rgba(15, 6, 9, 0.95) 100%);
+      border: 1px solid var(--rose-border);
+      border-radius: 12px;
+      padding: 4.5rem 4rem;
+      position: relative;
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: 1.3fr 0.9fr;
+      gap: 3rem;
+      align-items: center;
+      box-shadow: 0 30px 70px rgba(0, 0, 0, 0.8);
+    }
+
+    @media (max-width: 900px) {
+      .closing-card {
+        grid-template-columns: 1fr;
+        padding: 3rem 1.75rem;
+      }
+    }
+
+    .closing-content {
+      display: flex;
+      flex-direction: column;
+      gap: 1.75rem;
+      position: relative;
+      z-index: 2;
+    }
+
+    .closing-title {
+      font-size: clamp(2.2rem, 4.5vw, 3.8rem);
+      font-weight: 400;
+      line-height: 1.15;
+      color: var(--pale-rose-beige);
+    }
+
+    .closing-script-word {
+      font-family: var(--font-script);
+      font-size: clamp(3.2rem, 6.5vw, 5.2rem);
+      color: var(--muted-rose);
+      display: inline-block;
+      line-height: 0.9;
+      margin-left: 0.3rem;
+      text-shadow: 0 0 25px rgba(181, 73, 91, 0.4);
+    }
+
+    .closing-sub {
+      font-size: 1.1rem;
+      color: var(--beige-subtle);
+      letter-spacing: 0.05em;
+    }
+
+    .closing-contact-details {
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem;
+      margin-top: 0.5rem;
+    }
+
+    .contact-line {
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+      font-size: 0.95rem;
+      color: var(--pale-rose-beige);
+    }
+
+    .contact-line svg {
+      color: var(--muted-rose);
+      flex-shrink: 0;
+    }
+
+    .contact-line a:hover {
+      color: var(--muted-rose);
+      text-decoration: underline;
+    }
+
+    .closing-socials {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-top: 0.5rem;
+    }
+
+    /* Cropped Black-and-White Photo in Corner */
+    .closing-photo-wrap {
+      position: relative;
+      display: flex;
+      justify-content: flex-end;
+      align-items: flex-end;
+      height: 100%;
+      min-height: 320px;
+    }
+
+    .closing-photo-frame {
+      position: relative;
+      width: 270px;
+      height: 340px;
+      border-radius: 8px;
+      overflow: hidden;
+      border: 1px solid var(--rose-border);
+      box-shadow: 0 20px 45px rgba(0, 0, 0, 0.9);
+      background: #0d0608;
+    }
+
+    .closing-photo {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top center;
+      filter: grayscale(100%) contrast(120%) brightness(0.92);
+      transition: var(--transition-editorial);
+    }
+
+    .closing-photo-wrap:hover .closing-photo {
+      filter: grayscale(85%) contrast(115%) brightness(0.96);
+      transform: scale(1.03);
+    }
+
+    .closing-signature-seal {
+      position: absolute;
+      bottom: 12px;
+      right: 12px;
+      font-family: var(--font-script);
+      font-size: 2rem;
+      color: var(--pale-rose-beige);
+      text-shadow: 0 2px 8px rgba(0, 0, 0, 0.9);
+      pointer-events: none;
+    }
+
+    /* Footer Sign-off */
+    .editorial-footer {
+      padding: 3.5rem 0 2.5rem 0;
+      text-align: center;
+      border-top: 1px solid var(--rose-border);
+      margin-top: 4.5rem;
+      position: relative;
+      z-index: 2;
+    }
+
+    .footer-gratitude {
+      font-family: var(--font-serif);
+      font-size: 1.35rem;
+      font-style: italic;
+      color: var(--pale-rose-beige);
+      margin-bottom: 0.5rem;
+    }
+
+    .footer-copy {
+      font-size: 0.78rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--beige-dim);
+    }
+
+    /* ==========================================================================
+       11. KEYFRAME ANIMATIONS
+       ========================================================================== */
+    @keyframes riseHeadline {
+      0% {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeInPhoto {
+      0% {
+        opacity: 0;
+        transform: translateY(20px) scale(0.98);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+    }
+
+    @keyframes pulseGreen {
+      0%, 100% {
+        transform: scale(1);
+        opacity: 1;
+      }
+      50% {
+        transform: scale(1.3);
+        opacity: 0.5;
+      }
+    }
+
+    @keyframes spinSlow {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+
+    /* Scroll Reveal Transition Class */
+    .reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Reduced Motion Accessibility */
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
+      .reveal {
+        opacity: 1 !important;
+        transform: none !important;
+      }
+    }
+
+    /* Mobile Responsive Fine-tuning */
+    @media (max-width: 960px) {
+      .hero-section {
+        min-height: auto;
+        padding-bottom: 2.5rem;
+      }
+      .hero-headline-wrap {
+        position: relative;
+        top: 0;
+        margin-bottom: 0.25rem;
+        padding: 0 0.5rem;
+      }
+      .hero-headline {
+        font-size: clamp(2rem, 11vw, 6.2rem);
+      }
+      .hero-stage {
+        min-height: auto;
+      }
+      .hero-cutout-img {
+        height: 58vh;
+        min-height: 380px;
+      }
+      .hero-editorial-overlay {
+        position: relative;
+        inset: auto;
+        display: flex;
+        flex-direction: column;
+        gap: 2.25rem;
+        align-items: center;
+        text-align: center;
+        margin-top: 1.25rem;
+        padding: 0;
+        pointer-events: auto;
+      }
+      .hero-col-left {
+        max-width: 100%;
+        align-items: center;
+        text-align: center;
+        justify-self: center;
+      }
+      .hero-col-center {
+        display: none;
+      }
+      .hero-col-right {
+        max-width: 100%;
+        align-items: center;
+        text-align: center;
+        justify-self: center;
+      }
+      .hero-actions-right {
+        align-items: center;
+      }
+      .hero-tagline {
+        border-left: none;
+        padding-left: 0;
+        border-bottom: 2px solid var(--burgundy);
+        padding-bottom: 0.75rem;
+      }
+      .signature-name {
+        font-size: 3.2rem;
+      }
+      .section-wrap {
+        padding: 4.5rem 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Film Grain Overlay -->
+  <div class="film-grain" aria-hidden="true"></div>
+  
+  <!-- Subtle Vignette Glow -->
+  <div class="vignette-overlay" aria-hidden="true"></div>
+
+  <!-- Ambient Blurred Botanical Elements -->
+  <svg class="botanical-bg flower-top-left" viewBox="0 0 200 200" fill="none" stroke="#5a0f1c" stroke-width="1.2" aria-hidden="true">
+    <path d="M100 20 C110 50, 150 50, 180 80 C150 110, 150 150, 120 180 C90 150, 50 150, 20 120 C50 90, 50 50, 100 20 Z" />
+    <circle cx="100" cy="100" r="35" stroke="#7a1527" />
+    <path d="M100 50 Q120 100 150 100 Q100 120 100 150 Q80 100 50 100 Q100 80 100 50 Z" />
+  </svg>
+
+  <svg class="botanical-bg flower-mid-right" viewBox="0 0 200 200" fill="none" stroke="#5a0f1c" stroke-width="1.2" aria-hidden="true">
+    <path d="M100 10 C130 60, 170 40, 190 90 C150 130, 160 170, 110 190 C60 160, 40 170, 10 120 C40 80, 50 30, 100 10 Z" />
+    <circle cx="100" cy="100" r="40" stroke="#7a1527" />
+  </svg>
+
+  <svg class="botanical-bg flower-bottom-left" viewBox="0 0 200 200" fill="none" stroke="#5a0f1c" stroke-width="1.2" aria-hidden="true">
+    <path d="M100 20 C120 60, 160 60, 180 100 C140 140, 140 170, 100 180 C60 140, 40 140, 20 100 C60 60, 60 20, 100 20 Z" />
+  </svg>
+
+  <div class="container">
+
+    <!-- Top Editorial Labels -->
+    <header class="editorial-header">
+      <div class="corner-label">
+        <span class="corner-dot"></span>
+        <span>Full Stack Developer</span>
+      </div>
+      <div class="corner-label">
+        <span>Creative Portfolio</span>
+        <span class="corner-dot"></span>
+      </div>
+    </header>
+
+    <!-- SECTION 1: HERO (MAGAZINE COVER POSTER) -->
+    <section class="hero-section" id="hero">
+      
+      <!-- Giant Word PORTFOLIO Spanning Full Width at Top Behind Head -->
+      <div class="hero-headline-wrap">
+        <h1 class="hero-headline">PORTFOLIO</h1>
+      </div>
+
+      <!-- Centered Cutout Stage on Page Background (80vh, No box, Soft glow, Bottom fade) -->
+      <div class="hero-stage">
+        <div class="hero-head-glow" aria-hidden="true"></div>
+        <img 
+          src="uzer-cutout.png" 
+          alt="Shaikh Mohammed Uzer cutout" 
+          class="hero-cutout-img"
+          id="heroPhotoImg"
+        />
+      </div>
+
+      <!-- Editorial Layout: Left & Right Columns on Desktop, Stacked on Mobile -->
+      <div class="hero-editorial-overlay">
+        
+        <!-- Left Column: Tagline, Signature, Location -->
+        <div class="hero-col-left">
+          <p class="hero-tagline">
+            "I build full stack web apps with clean architecture and secure APIs."
+          </p>
+
+          <div class="hero-signature-wrap">
+            <span class="signature-name">Shaikh Mohammed Uzer</span>
+            <span class="signature-sub">M.Sc. IT (Pursuing 2027) &bull; B.Sc. IT (Completed) &bull; LJ University</span>
+          </div>
+
+          <div class="hero-location">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"></circle>
+              <line x1="2" y1="12" x2="22" y2="12"></line>
+              <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+            </svg>
+            <span>Based in India &bull; English, Hindi, Gujarati</span>
+          </div>
+        </div>
+
+        <!-- Center Spacer: Keeps Center Clear for Face -->
+        <div class="hero-col-center" aria-hidden="true"></div>
+
+        <!-- Right Column: Open to Opportunities, Resume, Socials -->
+        <div class="hero-col-right">
+          <div class="pill-status">
+            <span class="pill-pulse"></span>
+            <span>Open to opportunities</span>
+          </div>
+
+          <div class="hero-actions-right">
+            <a href="resume.pdf" class="btn-editorial" download="Shaikh_Mohammed_Uzer_Resume.pdf">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                <polyline points="7 10 12 15 17 10"></polyline>
+                <line x1="12" y1="15" x2="12" y2="3"></line>
+              </svg>
+              <span>Download resume</span>
+            </a>
+
+            <div class="hero-social-links">
+              <!-- GitHub -->
+              <a href="https://github.com/Uzair-11" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="GitHub Profile">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"></path>
+                  <path d="M9 18c-4.51 2-5-2-7-2"></path>
+                </svg>
+              </a>
+
+              <!-- LinkedIn -->
+              <a href="https://www.linkedin.com/in/uzershaikh76" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="LinkedIn Profile">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                  <rect x="2" y="9" width="4" height="12"></rect>
+                  <circle cx="4" cy="4" r="2"></circle>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- SECTION 2: SELECTED PROJECTS -->
+    <section class="section-wrap" id="projects">
+      
+      <div class="section-header-editorial reveal">
+        <div>
+          <span class="section-num-tag">01 / WORK SHOWCASE</span>
+          <h2 class="section-title">Selected Projects</h2>
+        </div>
+        <p class="section-desc-right">
+          Production systems, enterprise workflows, and full stack architectures built for real-world resilience.
+        </p>
+      </div>
+
+      <div class="projects-grid">
+        
+        <!-- Project 1: AxiomERP -->
+        <article class="project-card reveal">
+          <div class="card-meta-bar">
+            <span class="project-index">01</span>
+            <span class="project-type-tag">Enterprise ERP &bull; In Progress</span>
+          </div>
+
+          <!-- CSS Dark UI Mockup: ERP Ledger -->
+          <div class="mockup-frame">
+            <div class="mockup-chrome">
+              <span class="mockup-dot"></span>
+              <span class="mockup-dot"></span>
+              <span class="mockup-dot"></span>
+              <span class="mockup-url-bar">axiomerp.internal / ledger-audit</span>
+            </div>
+            <div class="mockup-canvas">
+              <div class="erp-stats-row">
+                <div class="erp-stat-box">
+                  <span>Balance</span>
+                  <strong>$24,800.00</strong>
+                </div>
+                <div class="erp-stat-box">
+                  <span>Inventory</span>
+                  <strong>98.4% Avail</strong>
+                </div>
+                <div class="erp-stat-box">
+                  <span>Tenants</span>
+                  <strong>Isolated</strong>
+                </div>
+              </div>
+              <div class="erp-ledger-table">
+                <div class="erp-table-row">
+                  <span>PO-1048 &bull; Vendor Apex</span>
+                  <span class="erp-status-badge">POSTED GRN</span>
+                </div>
+                <div class="erp-table-row">
+                  <span>PO-1049 &bull; Multi-Tenant RBAC</span>
+                  <span class="erp-status-badge">BALANCED</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card-body">
+            <h3 class="project-title">AxiomERP</h3>
+            <p class="project-desc">
+              ERP platform engineered with multi-tenant data isolation, role-based access control (RBAC), double-entry ledger accounting, and real-time inventory tracking.
+            </p>
+            <div class="tag-pills">
+              <span class="tag-pill">MERN</span>
+              <span class="tag-pill">PostgreSQL</span>
+              <span class="tag-pill">RBAC</span>
+              <span class="tag-pill">Accounting Ledger</span>
+            </div>
+            <div class="card-links">
+              <a href="https://github.com/Uzair-11/AxiomERP" target="_blank" rel="noopener noreferrer" class="btn-card-link">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"></path><path d="M9 18c-4.51 2-5-2-7-2"></path></svg>
+                <span>GitHub</span>
+              </a>
+              <span class="btn-card-link" style="opacity: 0.6; cursor: default;">
+                <span>Active Updation</span>
+              </span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 2: Training Center Manager -->
+        <article class="project-card reveal">
+          <div class="card-meta-bar">
+            <span class="project-index">02</span>
+            <span class="project-type-tag">NGO Platform &bull; Production</span>
+          </div>
+
+          <!-- CSS Dark UI Mockup: Multi-Branch Ops -->
+          <div class="mockup-frame">
+            <div class="mockup-chrome">
+              <span class="mockup-dot"></span>
+              <span class="mockup-dot"></span>
+              <span class="mockup-dot"></span>
+              <span class="mockup-url-bar">class-management.org / ops</span>
+            </div>
+            <div class="mockup-canvas">
+              <div class="ngo-kpi-bar">
+                <span class="ngo-role-badge">4-Tier Scoped RBAC</span>
+                <span class="ngo-test-badge">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  97 Backend &bull; 17 E2E Passed
+                </span>
+              </div>
+              <div class="attendance-kpi" style="font-size:0.65rem; color:var(--beige-dim); margin-top:0.3rem;">
+                Daily Attendance Enforcement & Fee Waiver Engine
+              </div>
+              <div class="ngo-attendance-grid">
+                <div class="attendance-cell checked">P</div>
+                <div class="attendance-cell checked">P</div>
+                <div class="attendance-cell checked">P</div>
+                <div class="attendance-cell">A</div>
+                <div class="attendance-cell checked">P</div>
+                <div class="attendance-cell checked">P</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card-body">
+            <h3 class="project-title">Training Center Manager</h3>
+            <p class="project-desc">
+              Multi-branch operations and finance system featuring four role tiers, monthly recurring billing with partial payments and waivers, attendance with holiday blocking, dynamic certificate templates, JWT refresh, rate limiting, 97 backend tests, and 17 Playwright tests.
+            </p>
+            <div class="tag-pills">
+              <span class="tag-pill">React</span>
+              <span class="tag-pill">Node.js</span>
+              <span class="tag-pill">Express</span>
+              <span class="tag-pill">PostgreSQL</span>
+              <span class="tag-pill">Jest (97)</span>
+              <span class="tag-pill">Playwright (17)</span>
+            </div>
+            <div class="card-links">
+              <a href="https://github.com/Uzair-11/class_management" target="_blank" rel="noopener noreferrer" class="btn-card-link">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"></path><path d="M9 18c-4.51 2-5-2-7-2"></path></svg>
+                <span>GitHub</span>
+              </a>
+              <a href="https://class-management-umber.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn-card-link btn-card-demo">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                <span>Live Demo</span>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 3: ScreenPass -->
+        <article class="project-card reveal">
+          <div class="card-meta-bar">
+            <span class="project-index">03</span>
+            <span class="project-type-tag">Cinema Booking &bull; Full Stack</span>
+          </div>
+
+          <!-- CSS Dark UI Mockup: Cinema Matrix -->
+          <div class="mockup-frame">
+            <div class="mockup-chrome">
+              <span class="mockup-dot"></span>
+              <span class="mockup-dot"></span>
+              <span class="mockup-dot"></span>
+              <span class="mockup-url-bar">screenpass.app / seat-matrix</span>
+            </div>
+            <div class="mockup-canvas">
+              <div class="cinema-screen"></div>
+              <div class="seat-grid">
+                <div class="seat reserved"></div>
+                <div class="seat selected"></div>
+                <div class="seat selected"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat reserved"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat reserved"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat reserved"></div>
+                <div class="seat reserved"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+              </div>
+              <div class="ticket-bar">
+                <span>Row C &bull; Seats 02, 03</span>
+                <span style="color:#34d399;">Pass Generated &bull; Concurrent Lock</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="card-body">
+            <h3 class="project-title">ScreenPass</h3>
+            <p class="project-desc">
+              Movie ticket booking platform handling real-time seat matrix reservations, concurrent booking locks, manager screening administration, and instant digital pass generation.
+            </p>
+            <div class="tag-pills">
+              <span class="tag-pill">MEAN Stack</span>
+              <span class="tag-pill">MongoDB</span>
+              <span class="tag-pill">Express</span>
+              <span class="tag-pill">Angular</span>
+              <span class="tag-pill">Node.js</span>
+            </div>
+            <div class="card-links">
+              <a href="https://github.com/Uzair-11/ScreenPass" target="_blank" rel="noopener noreferrer" class="btn-card-link">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"></path><path d="M9 18c-4.51 2-5-2-7-2"></path></svg>
+                <span>GitHub</span>
+              </a>
+              <a href="https://screen-pass-azure.vercel.app" target="_blank" rel="noopener noreferrer" class="btn-card-link btn-card-demo">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                <span>Live Demo</span>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 4: SRP Rentals -->
+        <article class="project-card reveal">
+          <div class="card-meta-bar">
+            <span class="project-index">04</span>
+            <span class="project-type-tag">Vehicle Fleet &bull; Booking System</span>
+          </div>
+
+          <!-- CSS Dark UI Mockup: Vehicle Fleet -->
+          <div class="mockup-frame">
+            <div class="mockup-chrome">
+              <span class="mockup-dot"></span>
+              <span class="mockup-dot"></span>
+              <span class="mockup-dot"></span>
+              <span class="mockup-url-bar">srp-rentals.com / fleet-catalog</span>
+            </div>
+            <div class="mockup-canvas">
+              <div class="fleet-header">
+                <span>Fleet Availability</span>
+                <span style="color:#34d399;">Active &bull; 18 Models</span>
+              </div>
+              <div class="fleet-vehicle-card">
+                <div>
+                  <span style="font-size:0.75rem; color:var(--pale-rose-beige); font-weight:600; display:block;">Premium Sedan Class</span>
+                  <span style="font-size:0.6rem; color:var(--beige-dim);">$65 / Day &bull; Automated Duration Calc</span>
+                </div>
+                <span class="erp-status-badge">RESERVED</span>
+              </div>
+              <div class="calc-slider">
+                <div class="calc-slider-fill"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card-body">
+            <h3 class="project-title">SRP Rentals</h3>
+            <p class="project-desc">
+              Vehicle rental system featuring dynamic fleet cataloging, live vehicle availability filtering, customer reservation scheduling, duration-based cost calculation, and administrative fleet controls.
+            </p>
+            <div class="tag-pills">
+              <span class="tag-pill">MERN Stack</span>
+              <span class="tag-pill">React</span>
+              <span class="tag-pill">Node.js</span>
+              <span class="tag-pill">Express</span>
+              <span class="tag-pill">MongoDB</span>
+            </div>
+            <div class="card-links">
+              <a href="https://github.com/Uzair-11" target="_blank" rel="noopener noreferrer" class="btn-card-link">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"></path><path d="M9 18c-4.51 2-5-2-7-2"></path></svg>
+                <span>GitHub Profile</span>
+              </a>
+            </div>
+          </div>
+        </article>
+
+      </div>
+
+    </section>
+
+    <!-- SECTION 3: MY PROCESS -->
+    <section class="section-wrap" id="process">
+      
+      <div class="section-header-editorial reveal">
+        <div>
+          <span class="section-num-tag">02 / METHODOLOGY</span>
+          <h2 class="section-title">My Process</h2>
+        </div>
+        <p class="section-desc-right">
+          Architectural discipline from conceptual scoping to production release.
+        </p>
+      </div>
+
+      <div class="process-layout">
+        
+        <!-- Five Steps -->
+        <div class="steps-list reveal">
+          
+          <div class="step-item">
+            <span class="step-number">01</span>
+            <div class="step-content">
+              <h3>Plan</h3>
+              <p>System architecture design, user workflow mapping, technical requirements, and database scoping.</p>
+            </div>
+          </div>
+
+          <div class="step-item">
+            <span class="step-number">02</span>
+            <div class="step-content">
+              <h3>Model</h3>
+              <p>Domain entity modeling, relational and NoSQL normalization, and zero-trust security boundaries.</p>
+            </div>
+          </div>
+
+          <div class="step-item">
+            <span class="step-number">03</span>
+            <div class="step-content">
+              <h3>Build</h3>
+              <p>Modular backend API engineering, responsive UI implementation, and clean architectural separation.</p>
+            </div>
+          </div>
+
+          <div class="step-item">
+            <span class="step-number">04</span>
+            <div class="step-content">
+              <h3>Test</h3>
+              <p>Rigorous unit, API integration, and automated Playwright end-to-end tests for verified zero-regression.</p>
+            </div>
+          </div>
+
+          <div class="step-item">
+            <span class="step-number">05</span>
+            <div class="step-content">
+              <h3>Ship</h3>
+              <p>Production deployment, secure environment hardening, performance telemetry, and monitoring.</p>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Circular Frame with Burgundy Flower -->
+        <div class="process-visual-wrap reveal">
+          <div class="circular-frame">
+            <svg class="frame-flower-svg" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+              <!-- Intricate Botanical Rose Artwork -->
+              <circle cx="50" cy="50" r="12" fill="#5a0f1c" />
+              <path d="M50 38 C40 28, 25 38, 38 50 C28 62, 38 75, 50 62 C62 75, 72 62, 62 50 C75 38, 60 28, 50 38 Z" fill="#2a0a10" stroke="#b5495b" />
+              <path d="M50 24 C32 12, 12 32, 24 50 C12 68, 32 88, 50 76 C68 88, 88 68, 76 50 C88 32, 68 12, 50 24 Z" stroke="#b5495b" />
+              <path d="M50 14 C24 -2, -2 24, 14 50 C-2 76, 24 102, 50 86 C76 102, 102 76, 86 50 C102 24, 76 -2, 50 14 Z" stroke="#7a1527" stroke-dasharray="3 3" />
+            </svg>
+          </div>
+          <p class="frame-quote">
+            "A thoughtful process for reliable results."
+          </p>
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- SECTION 4: SKILLS AND TOOLS -->
+    <section class="section-wrap" id="skills">
+      
+      <div class="section-header-editorial reveal">
+        <div>
+          <span class="section-num-tag">03 / TECHNICAL CAPABILITIES</span>
+          <h2 class="section-title">Skills &amp; Tools</h2>
+        </div>
+        <p class="section-desc-right">
+          Proficient in core programming languages, modern web frameworks, databases, and testing tools.
+        </p>
+      </div>
+
+      <div class="skills-grid reveal">
+        
+        <!-- HTML -->
+        <div class="skill-tile">
+          <div class="skill-icon-wrap">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 3l1.5 16L12 21l6.5-2L20 3H4z"/><path d="M7 7h10M7 11h9M8 15h8"/></svg>
+          </div>
+          <span class="skill-name">HTML5</span>
+          <span class="skill-category-tag">Markup</span>
+        </div>
+
+        <!-- CSS -->
+        <div class="skill-tile">
+          <div class="skill-icon-wrap">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 3l1.5 16L12 21l6.5-2L20 3H4z"/><path d="M7 8h10l-.5 4.5H7.5L8 16l4 1 4-1 .3-3"/></svg>
+          </div>
+          <span class="skill-name">CSS3</span>
+          <span class="skill-category-tag">Styling</span>
+        </div>
+
+        <!-- JavaScript -->
+        <div class="skill-tile">
+          <div class="skill-icon-wrap">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M8 16v-3a1 1 0 0 1 2 0v3M14 16h2a2 2 0 0 0 2-2v-1a2 2 0 0 0-2-2h-2"/></svg>
+          </div>
+          <span class="skill-name">JavaScript</span>
+          <span class="skill-category-tag">Language</span>
+        </div>
+
+        <!-- Python -->
+        <div class="skill-tile">
+          <div class="skill-icon-wrap">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2c5 0 5 3 5 5v2H9c-3 0-5 2-5 5s2 5 5 5h1v-2c0-3 2-5 5-5h2c3 0 5-2 5-5s-2-5-5-5h-5z"/><circle cx="9" cy="6" r="1" fill="currentColor"/><circle cx="15" cy="18" r="1" fill="currentColor"/></svg>
+          </div>
+          <span class="skill-name">Python</span>
+          <span class="skill-category-tag">Language</span>
+        </div>
+
+        <!-- Java -->
+        <div class="skill-tile">
+          <div class="skill-icon-wrap">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M18 8h1a4 4 0 0 1 0 8h-1M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8zM6 1v3M10 1v3M14 1v3"/></svg>
+          </div>
+          <span class="skill-name">Java</span>
+          <span class="skill-category-tag">Language</span>
+        </div>
+
+        <!-- C / C++ -->
+        <div class="skill-tile">
+          <div class="skill-icon-wrap">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="9" cy="12" r="6"/><line x1="16" y1="10" x2="16" y2="14"/><line x1="14" y1="12" x2="18" y2="12"/><line x1="21" y1="10" x2="21" y2="14"/><line x1="19" y1="12" x2="23" y2="12"/></svg>
+          </div>
+          <span class="skill-name">C / C++</span>
+          <span class="skill-category-tag">Language</span>
+        </div>
+
+        <!-- React -->
+        <div class="skill-tile">
+          <div class="skill-icon-wrap">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><ellipse cx="12" cy="12" rx="10" ry="4.5" transform="rotate(30 12 12)"/><ellipse cx="12" cy="12" rx="10" ry="4.5" transform="rotate(90 12 12)"/><ellipse cx="12" cy="12" rx="10" ry="4.5" transform="rotate(150 12 12)"/><circle cx="12" cy="12" r="2" fill="currentColor"/></svg>
+          </div>
+          <span class="skill-name">React</span>
+          <span class="skill-category-tag">Frontend</span>
+        </div>
+
+        <!-- Angular -->
+        <div class="skill-tile">
+          <div class="skill-icon-wrap">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polygon points="12 2 2 5 3.5 17 12 22 20.5 17 22 5 12 2"/><polygon points="12 6 7.5 16 9.5 16 10.5 13.5 13.5 13.5 14.5 16 16.5 16 12 6"/></svg>
+          </div>
+          <span class="skill-name">Angular</span>
+          <span class="skill-category-tag">Frontend</span>
+        </div>
+
+        <!-- Node.js -->
+        <div class="skill-tile">
+          <div class="skill-icon-wrap">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polygon points="12 2 21 7 21 17 12 22 3 17 3 7 12 2"/><polyline points="12 2 12 12 21 7"/><polyline points="12 12 3 7"/><polyline points="12 12 12 22"/></svg>
+          </div>
+          <span class="skill-name">Node.js</span>
+          <span class="skill-category-tag">Runtime</span>
+        </div>
+
+        <!-- Express -->
+        <div class="skill-tile">
+          <div class="skill-icon-wrap">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="6" width="20" height="12" rx="2"/><line x1="6" y1="12" x2="10" y2="12"/><line x1="14" y1="12" x2="18" y2="12"/></svg>
+          </div>
+          <span class="skill-name">Express</span>
+          <span class="skill-category-tag">Backend</span>
+        </div>
+
+        <!-- MongoDB -->
+        <div class="skill-tile">
+          <div class="skill-icon-wrap">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2C9 7 6 11 6 15c0 4 3 7 6 7s6-3 6-7c0-4-3-8-6-13z"/><line x1="12" y1="2" x2="12" y2="22"/></svg>
+          </div>
+          <span class="skill-name">MongoDB</span>
+          <span class="skill-category-tag">NoSQL Database</span>
+        </div>
+
+        <!-- PostgreSQL -->
+        <div class="skill-tile">
+          <div class="skill-icon-wrap">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>
+          </div>
+          <span class="skill-name">PostgreSQL</span>
+          <span class="skill-category-tag">SQL Database</span>
+        </div>
+
+        <!-- Django -->
+        <div class="skill-tile">
+          <div class="skill-icon-wrap">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M9 7v6a2 2 0 0 1-2 2H6"/><path d="M15 7v10"/></svg>
+          </div>
+          <span class="skill-name">Django</span>
+          <span class="skill-category-tag">Backend</span>
+        </div>
+
+        <!-- Laravel -->
+        <div class="skill-tile">
+          <div class="skill-icon-wrap">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polygon points="12 2 22 8.5 22 15.5 12 22 2 15.5 2 8.5 12 2"/><path d="M12 12l8-5M12 12v10M12 12L4 7"/></svg>
+          </div>
+          <span class="skill-name">Laravel</span>
+          <span class="skill-category-tag">Backend</span>
+        </div>
+
+        <!-- Jest -->
+        <div class="skill-tile">
+          <div class="skill-icon-wrap">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
+          </div>
+          <span class="skill-name">Jest</span>
+          <span class="skill-category-tag">Backend Testing</span>
+        </div>
+
+        <!-- Playwright -->
+        <div class="skill-tile">
+          <div class="skill-icon-wrap">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+          </div>
+          <span class="skill-name">Playwright</span>
+          <span class="skill-category-tag">E2E Testing</span>
+        </div>
+
+        <!-- Git / GitHub -->
+        <div class="skill-tile">
+          <div class="skill-icon-wrap">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><line x1="6" y1="3" x2="6" y2="15"/><circle cx="18" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M18 9a9 9 0 0 1-9 9"/></svg>
+          </div>
+          <span class="skill-name">Git / GitHub</span>
+          <span class="skill-category-tag">Version Control</span>
+        </div>
+
+        <!-- VS Code -->
+        <div class="skill-tile">
+          <div class="skill-icon-wrap">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+          </div>
+          <span class="skill-name">VS Code</span>
+          <span class="skill-category-tag">Editor &amp; Tools</span>
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- SECTION 5: CERTIFICATES -->
+    <section class="section-wrap" id="certificates">
+      
+      <div class="section-header-editorial reveal">
+        <div>
+          <span class="section-num-tag">04 / ACCREDITATIONS</span>
+          <h2 class="section-title">Certifications</h2>
+        </div>
+        <p class="section-desc-right">
+          12 specialized credentials earned across cloud, cybersecurity, software engineering, databases, and AI.
+        </p>
+      </div>
+
+      <div class="cert-groups reveal">
+        
+        <!-- Group 1: Google -->
+        <div class="cert-group">
+          <h3 class="cert-issuer-title">Google</h3>
+          <div class="cert-grid">
+            <div class="cert-card">
+              <div class="cert-header">
+                <span class="cert-issuer-label">Google Career Certificates</span>
+                <h4 class="cert-title">Data Analysis with R Programming</h4>
+              </div>
+              <a href="https://ik.imagekit.io/8wguvwsuie/certificates/Coursera/Data%20Analysis%20with%20R%20Programming.pdf?updatedAt=1766241044646" target="_blank" rel="noopener noreferrer" class="cert-view-btn">
+                <span>View Certificate</span>
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+              </a>
+            </div>
+
+            <div class="cert-card">
+              <div class="cert-header">
+                <span class="cert-issuer-label">Google Career Certificates</span>
+                <h4 class="cert-title">Foundations of Cybersecurity</h4>
+              </div>
+              <a href="https://ik.imagekit.io/8wguvwsuie/certificates/Coursera/Foundations%20of%20Cybersecurity.pdf?updatedAt=1766241044496" target="_blank" rel="noopener noreferrer" class="cert-view-btn">
+                <span>View Certificate</span>
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Group 2: IBM -->
+        <div class="cert-group">
+          <h3 class="cert-issuer-title">IBM</h3>
+          <div class="cert-grid">
+            <div class="cert-card">
+              <div class="cert-header">
+                <span class="cert-issuer-label">IBM</span>
+                <h4 class="cert-title">Generative AI: Introduction and Applications</h4>
+              </div>
+              <a href="https://ik.imagekit.io/8wguvwsuie/certificates/Coursera/Generative%20AI-%20Introduction%20and%20Applications.pdf?updatedAt=1768979931274" target="_blank" rel="noopener noreferrer" class="cert-view-btn">
+                <span>View Certificate</span>
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+              </a>
+            </div>
+
+            <div class="cert-card">
+              <div class="cert-header">
+                <span class="cert-issuer-label">IBM</span>
+                <h4 class="cert-title">Introduction to Cybersecurity Essentials</h4>
+              </div>
+              <a href="https://ik.imagekit.io/8wguvwsuie/certificates/Coursera/Introduction%20to%20Cybersecurity%20Essentials.pdf?updatedAt=1766241044611" target="_blank" rel="noopener noreferrer" class="cert-view-btn">
+                <span>View Certificate</span>
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+              </a>
+            </div>
+
+            <div class="cert-card">
+              <div class="cert-header">
+                <span class="cert-issuer-label">IBM</span>
+                <h4 class="cert-title">Introduction to Data Analytics</h4>
+              </div>
+              <a href="https://ik.imagekit.io/8wguvwsuie/certificates/Coursera/Introduction%20to%20Data%20Analytics.pdf?updatedAt=1768979931391" target="_blank" rel="noopener noreferrer" class="cert-view-btn">
+                <span>View Certificate</span>
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+              </a>
+            </div>
+
+            <div class="cert-card">
+              <div class="cert-header">
+                <span class="cert-issuer-label">IBM</span>
+                <h4 class="cert-title">Introduction to Relational Databases</h4>
+              </div>
+              <a href="https://ik.imagekit.io/8wguvwsuie/certificates/Coursera/Introduction%20to%20Relational%20Databases.pdf?updatedAt=1766241044744" target="_blank" rel="noopener noreferrer" class="cert-view-btn">
+                <span>View Certificate</span>
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Group 3: University Programs -->
+        <div class="cert-group">
+          <h3 class="cert-issuer-title">University Programs</h3>
+          <div class="cert-grid">
+            <div class="cert-card">
+              <div class="cert-header">
+                <span class="cert-issuer-label">University at Buffalo</span>
+                <h4 class="cert-title">Blockchain Basics</h4>
+              </div>
+              <a href="https://ik.imagekit.io/8wguvwsuie/certificates/Coursera/Blockchain%20Basics.pdf?updatedAt=1766241045037" target="_blank" rel="noopener noreferrer" class="cert-view-btn">
+                <span>View Certificate</span>
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+              </a>
+            </div>
+
+            <div class="cert-card">
+              <div class="cert-header">
+                <span class="cert-issuer-label">CentraleSupélec</span>
+                <h4 class="cert-title">Build Your First Android App</h4>
+              </div>
+              <a href="https://ik.imagekit.io/8wguvwsuie/certificates/Coursera/Build%20Your%20First%20Android%20App.pdf?updatedAt=1766241044627" target="_blank" rel="noopener noreferrer" class="cert-view-btn">
+                <span>View Certificate</span>
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+              </a>
+            </div>
+
+            <div class="cert-card">
+              <div class="cert-header">
+                <span class="cert-issuer-label">UC Santa Cruz</span>
+                <h4 class="cert-title">C++ For C Programmers, Part A</h4>
+              </div>
+              <a href="https://ik.imagekit.io/8wguvwsuie/certificates/Coursera/C++%20For%20C%20Programmers,%20Part%20A.pdf?updatedAt=1766241044649" target="_blank" rel="noopener noreferrer" class="cert-view-btn">
+                <span>View Certificate</span>
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+              </a>
+            </div>
+
+            <div class="cert-card">
+              <div class="cert-header">
+                <span class="cert-issuer-label">University of Michigan</span>
+                <h4 class="cert-title">Interactivity with JavaScript</h4>
+              </div>
+              <a href="https://ik.imagekit.io/8wguvwsuie/certificates/Coursera/Interactivity%20with%20JavaScript.pdf?updatedAt=1766241044909" target="_blank" rel="noopener noreferrer" class="cert-view-btn">
+                <span>View Certificate</span>
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+              </a>
+            </div>
+
+            <div class="cert-card">
+              <div class="cert-header">
+                <span class="cert-issuer-label">University of Colorado System</span>
+                <h4 class="cert-title">Introduction to C# Programming &amp; Unity</h4>
+              </div>
+              <a href="https://ik.imagekit.io/8wguvwsuie/certificates/Coursera/Introduction%20to%20C_%20Programming%20and%20Unity.pdf?updatedAt=1766241044695" target="_blank" rel="noopener noreferrer" class="cert-view-btn">
+                <span>View Certificate</span>
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+              </a>
+            </div>
+
+            <div class="cert-card">
+              <div class="cert-header">
+                <span class="cert-issuer-label">University of Minnesota</span>
+                <h4 class="cert-title">Web &amp; Mobile Testing with Selenium</h4>
+              </div>
+              <a href="https://ik.imagekit.io/8wguvwsuie/certificates/Coursera/Web%20and%20Mobile%20Testing%20with%20Selenium.pdf?updatedAt=1766241044751" target="_blank" rel="noopener noreferrer" class="cert-view-btn">
+                <span>View Certificate</span>
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </section>
+
+  </div><!-- end .container -->
+
+  <!-- SECTION 6: NUMBERS STRIP -->
+  <section class="numbers-strip" id="numbers">
+    <div class="container">
+      <div class="numbers-grid reveal">
+        <div class="number-item">
+          <span class="number-val" data-target="4">4</span>
+          <span class="number-label">Projects Built</span>
+        </div>
+        <div class="number-item">
+          <span class="number-val" data-target="12">12</span>
+          <span class="number-label">Certificates</span>
+        </div>
+        <div class="number-item">
+          <span class="number-val" data-target="97">97</span>
+          <span class="number-label">Backend Tests</span>
+        </div>
+        <div class="number-item">
+          <span class="number-val" data-target="17">17</span>
+          <span class="number-label">End-to-End Tests</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="container">
+
+    <!-- SECTION 7: CLOSING BLOCK -->
+    <section class="closing-section" id="contact">
+      
+      <div class="closing-card reveal">
+        
+        <div class="closing-content">
+          <h2 class="closing-title">
+            Let's create something <span class="closing-script-word">amazing</span>
+          </h2>
+          
+          <p class="closing-sub">
+            Open to full stack roles and internships
+          </p>
+
+          <div class="closing-contact-details">
+            <div class="contact-line">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="4" width="20" height="16" rx="2"></rect>
+                <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+              </svg>
+              <a href="mailto:shaikhuzer7576@gmail.com">shaikhuzer7576@gmail.com</a>
+            </div>
+
+            <div class="contact-line">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+              </svg>
+              <a href="tel:+917984622267">+91 7984622267</a>
+            </div>
+          </div>
+
+          <div class="closing-socials">
+            <a href="https://github.com/Uzair-11" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="GitHub Profile">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"></path>
+                <path d="M9 18c-4.51 2-5-2-7-2"></path>
+              </svg>
+            </a>
+
+            <a href="https://www.linkedin.com/in/uzershaikh76" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="LinkedIn Profile">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                <rect x="2" y="9" width="4" height="12"></rect>
+                <circle cx="4" cy="4" r="2"></circle>
+              </svg>
+            </a>
+
+            <a href="mailto:shaikhuzer7576@gmail.com" class="btn-editorial" style="padding: 0.65rem 1.4rem; font-size: 0.78rem;">
+              <span>Send Message</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Black-and-White Photo Cropped in Bottom-Right Corner -->
+        <div class="closing-photo-wrap">
+          <div class="closing-photo-frame">
+            <img 
+              src="uzer-cutout-bw.png" 
+              alt="Shaikh Mohammed Uzer portrait" 
+              class="closing-photo"
+              id="closingPhotoImg"
+            />
+            <div class="closing-signature-seal">~ Uzer</div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Footer Sign-off -->
+      <footer class="editorial-footer">
+        <p class="footer-gratitude">"Thank you for visiting"</p>
+        <p class="footer-copy">&copy; 2026 Shaikh Mohammed Uzer &bull; Crafted with clean architecture &amp; editorial aesthetic</p>
+      </footer>
+
+    </section>
+
+  </div><!-- end .container -->
+
+  <!-- Vanilla JS (Single file, no frameworks) -->
+  <script>
+    (function () {
+      const heroPhoto = document.getElementById('heroPhotoImg');
+      if (heroPhoto) {
+        heroPhoto.onerror = function () {
+          this.onerror = null;
+          this.src = 'uzer-cutout.png';
+        };
+      }
+
+      const closingPhoto = document.getElementById('closingPhotoImg');
+      if (closingPhoto) {
+        closingPhoto.onerror = function () {
+          this.onerror = null;
+          this.src = 'uzer-cutout-bw.png';
+        };
+      }
+
+      // Intersection Observer for Smooth Scroll Reveals
+      const reveals = document.querySelectorAll('.reveal');
+      if ('IntersectionObserver' in window) {
+        const observerOptions = {
+          threshold: 0.12,
+          rootMargin: '0px 0px -40px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries, obs) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('active');
+              obs.unobserve(entry.target);
+            }
+          });
+        }, observerOptions);
+
+        reveals.forEach(el => observer.observe(el));
+      } else {
+        // Fallback for browsers without IntersectionObserver
+        reveals.forEach(el => el.classList.add('active'));
+      }
+
+      // Smooth Number Counting Animation on Scroll
+      const numberVals = document.querySelectorAll('.number-val');
+      let numbersCounted = false;
+
+      function countNumbers() {
+        numberVals.forEach(val => {
+          const target = parseInt(val.getAttribute('data-target'), 10);
+          if (isNaN(target)) return;
+          
+          let count = 0;
+          const duration = 1200;
+          const stepTime = Math.max(Math.floor(duration / target), 18);
+          
+          const timer = setInterval(() => {
+            count += Math.ceil(target / (duration / stepTime));
+            if (count >= target) {
+              val.textContent = target;
+              clearInterval(timer);
+            } else {
+              val.textContent = count;
+            }
+          }, stepTime);
+        });
+      }
+
+      const numbersSection = document.getElementById('numbers');
+      if (numbersSection && 'IntersectionObserver' in window) {
+        const numObserver = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting && !numbersCounted) {
+              numbersCounted = true;
+              countNumbers();
+            }
+          });
+        }, { threshold: 0.3 });
+
+        numObserver.observe(numbersSection);
+      }
+    })();
+  </script>
+</body>
+</html>
