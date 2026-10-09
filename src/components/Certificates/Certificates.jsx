@@ -42,6 +42,12 @@ const Certificates = () => {
       url: "https://ik.imagekit.io/8wguvwsuie/certificates/Coursera/Generative%20AI-%20Introduction%20and%20Applications.pdf?updatedAt=1768979931274"
     },
     {
+      title: "Gen AI for Software Development: Code Generation for Python",
+      issuer: "Coursera Project Network",
+      category: "AI / Python",
+      url: "https://ik.imagekit.io/8wguvwsuie/certificates/Coursera/Gen%20AI%20for%20Software%20Development%20Code%20Generation%20for%20Python.pdf"
+    },
+    {
       title: "Interactivity with JavaScript",
       issuer: "University of Michigan (Web Design Track)",
       category: "Web Dev",
