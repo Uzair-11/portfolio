@@ -10,11 +10,16 @@
   <meta name="author" content="Shaikh Mohammed Uzer" />
   <meta name="keywords" content="Shaikh Mohammed Uzer, Full Stack Developer, Software Engineer, Portfolio, MERN, MEAN, Django, Laravel, PostgreSQL, React, Node.js" />
   
-  <!-- Open Graph -->
+  <!-- Open Graph & Social Cards -->
   <meta property="og:title" content="Shaikh Mohammed Uzer — Full Stack Developer Portfolio" />
   <meta property="og:description" content="I build full stack web apps with clean architecture and secure APIs." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://github.com/Uzair-11" />
+  <meta property="og:image" content="https://uzair-11.github.io/portfolio_github/uzer-cutout-bw.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Shaikh Mohammed Uzer — Full Stack Developer Portfolio" />
+  <meta name="twitter:description" content="I build full stack web apps with clean architecture and secure APIs." />
+  <meta name="twitter:image" content="https://uzair-11.github.io/portfolio_github/uzer-cutout-bw.png" />
   
   <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%230a0506'/><text x='50' y='65' font-size='50' font-family='serif' fill='%23e3c4b0' text-anchor='middle'>U</text></svg>" />
@@ -37,12 +42,12 @@
       --burgundy: #5a0f1c;
       --burgundy-bright: #7a1527;
       --burgundy-glow: rgba(90, 15, 28, 0.45);
-      --muted-rose: #b5495b;
-      --rose-subtle: rgba(181, 73, 91, 0.2);
-      --rose-border: rgba(181, 73, 91, 0.28);
+      --muted-rose: #d2697d; /* WCAG AA compliant: 5.6:1 contrast against #0a0506 */
+      --rose-subtle: rgba(210, 105, 125, 0.2);
+      --rose-border: rgba(210, 105, 125, 0.32);
       --pale-rose-beige: #e3c4b0;
-      --beige-subtle: rgba(227, 196, 176, 0.7);
-      --beige-dim: rgba(227, 196, 176, 0.35);
+      --beige-subtle: #d6c0b2; /* Solid high contrast body text: 10.4:1 contrast */
+      --beige-dim: #c5ada0;    /* High contrast secondary metadata: 9.2:1 contrast */
 
       --font-serif: 'Bodoni Moda', Georgia, serif;
       --font-sans: 'Manrope', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
@@ -231,7 +236,7 @@
     /* Full-width Magazine "PORTFOLIO" Headline Behind Photo */
     .hero-headline-wrap {
       position: absolute;
-      top: 2.2rem;
+      top: 1.25rem;
       left: 0;
       right: 0;
       width: 100%;
@@ -239,7 +244,7 @@
       overflow: hidden;
       z-index: 1;
       user-select: none;
-      padding: 0 1rem;
+      padding: 0 clamp(0.75rem, 2vw, 2rem);
       pointer-events: none;
       box-sizing: border-box;
       animation: riseHeadline 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
@@ -247,7 +252,7 @@
 
     .hero-headline {
       font-family: var(--font-serif);
-      font-size: clamp(2.3rem, 11.2vw, 10.8rem);
+      font-size: clamp(2.1rem, 9.8vw, 9.2rem);
       font-weight: 700;
       line-height: 0.88;
       letter-spacing: 0.03em;
@@ -315,11 +320,12 @@
       position: absolute;
       inset: 0;
       display: grid;
-      grid-template-columns: 1fr min(440px, 34vw) 1fr;
-      align-items: center;
+      grid-template-columns: 1fr min(420px, 32vw) 1fr;
+      align-items: start;
       z-index: 3;
       pointer-events: none;
-      padding: 4.5rem 0 2rem 0;
+      padding-top: clamp(8.5rem, 15vw, 13.5rem);
+      padding-bottom: 2.5rem;
     }
 
     .hero-col-left, .hero-col-right {
@@ -387,9 +393,9 @@
 
     .hero-tagline {
       font-family: var(--font-serif);
-      font-size: clamp(1.6rem, 2.8vw, 2.4rem);
+      font-size: clamp(1.35rem, 2.2vw, 2.1rem);
       font-weight: 400;
-      line-height: 1.28;
+      line-height: 1.35;
       color: var(--pale-rose-beige);
       border-left: 2px solid var(--burgundy);
       padding-left: 1.25rem;
@@ -421,7 +427,7 @@
       display: flex;
       align-items: center;
       gap: 0.5rem;
-      font-size: 0.85rem;
+      font-size: 0.875rem;
       letter-spacing: 0.12em;
       text-transform: uppercase;
       color: var(--beige-subtle);
@@ -488,7 +494,7 @@
        4. SECTION HEADERS
        ========================================================================== */
     .section-wrap {
-      padding: 6.5rem 0;
+      padding: clamp(64px, 8vw, 110px) 0;
       position: relative;
     }
 
@@ -504,7 +510,7 @@
     }
 
     .section-num-tag {
-      font-size: 0.75rem;
+      font-size: 0.8rem;
       letter-spacing: 0.25em;
       text-transform: uppercase;
       color: var(--muted-rose);
@@ -576,257 +582,97 @@
     }
 
     .project-type-tag {
-      font-size: 0.72rem;
+      font-size: 0.75rem;
       text-transform: uppercase;
       letter-spacing: 0.16em;
       color: var(--pale-rose-beige);
       background: rgba(90, 15, 28, 0.4);
-      padding: 0.3rem 0.75rem;
-      border: 1px solid rgba(181, 73, 91, 0.3);
+      padding: 0.35rem 0.8rem;
+      border: 1px solid var(--rose-border);
       border-radius: 4px;
     }
 
-    /* CSS Dark UI Mockup Windows */
-    .mockup-frame {
+    /* Project Image Slot (16:10 Aspect Ratio, Object-Fit Cover, Crimson Border) */
+    .project-img-slot {
       width: 100%;
-      height: 230px;
-      background: #0d0608;
-      border-bottom: 1px solid var(--rose-border);
+      aspect-ratio: 16 / 10;
       position: relative;
       overflow: hidden;
-      display: flex;
-      flex-direction: column;
-    }
-
-    .mockup-chrome {
-      height: 30px;
-      background: #14070a;
-      border-bottom: 1px solid rgba(181, 73, 91, 0.15);
-      display: flex;
-      align-items: center;
-      padding: 0 1rem;
-      gap: 6px;
-    }
-
-    .mockup-dot {
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      background: rgba(181, 73, 91, 0.4);
-    }
-
-    .mockup-dot:nth-child(1) { background: #7a1527; }
-    .mockup-dot:nth-child(2) { background: #b5495b; }
-    .mockup-dot:nth-child(3) { background: #4a121c; }
-
-    .mockup-url-bar {
-      font-size: 0.65rem;
-      letter-spacing: 0.05em;
-      color: var(--beige-dim);
-      margin-left: 0.75rem;
-      background: #0a0405;
-      padding: 2px 12px;
-      border-radius: 3px;
-      border: 1px solid rgba(181, 73, 91, 0.15);
-    }
-
-    .mockup-canvas {
-      flex: 1;
-      padding: 1.25rem;
-      display: flex;
-      flex-direction: column;
-      gap: 0.75rem;
-      position: relative;
-      background: radial-gradient(circle at 80% 20%, rgba(90, 15, 28, 0.25) 0%, transparent 60%), #0d0608;
-    }
-
-    /* Mockup 1: AxiomERP Ledger */
-    .erp-stats-row {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 0.6rem;
-    }
-
-    .erp-stat-box {
-      background: rgba(28, 6, 11, 0.7);
-      border: 1px solid rgba(181, 73, 91, 0.2);
-      border-radius: 4px;
-      padding: 0.5rem;
-    }
-
-    .erp-stat-box span {
-      display: block;
-      font-size: 0.6rem;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      color: var(--beige-dim);
-    }
-
-    .erp-stat-box strong {
-      font-size: 0.85rem;
-      color: var(--pale-rose-beige);
-      font-family: var(--font-serif);
-    }
-
-    .erp-ledger-table {
-      background: rgba(20, 6, 9, 0.6);
-      border: 1px solid rgba(181, 73, 91, 0.2);
-      border-radius: 4px;
-      padding: 0.5rem;
-      display: flex;
-      flex-direction: column;
-      gap: 0.35rem;
-      font-size: 0.65rem;
-    }
-
-    .erp-table-row {
-      display: flex;
-      justify-content: space-between;
-      color: var(--beige-subtle);
-      border-bottom: 1px dashed rgba(181, 73, 91, 0.15);
-      padding-bottom: 0.2rem;
-    }
-
-    .erp-status-badge {
-      color: #34d399;
-      background: rgba(52, 211, 153, 0.1);
-      padding: 1px 6px;
-      border-radius: 3px;
-    }
-
-    /* Mockup 2: Training Center Manager */
-    .ngo-kpi-bar {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      background: rgba(42, 10, 16, 0.6);
-      padding: 0.5rem 0.75rem;
-      border-radius: 4px;
-      border: 1px solid rgba(181, 73, 91, 0.25);
-    }
-
-    .ngo-role-badge {
-      font-size: 0.65rem;
-      color: var(--pale-rose-beige);
-      background: var(--burgundy);
-      padding: 2px 8px;
-      border-radius: 3px;
-      letter-spacing: 0.05em;
-    }
-
-    .ngo-test-badge {
-      font-size: 0.65rem;
-      color: #34d399;
-      display: flex;
-      align-items: center;
-      gap: 4px;
-    }
-
-    .ngo-attendance-grid {
-      display: grid;
-      grid-template-columns: repeat(6, 1fr);
-      gap: 4px;
-      margin-top: 0.25rem;
-    }
-
-    .attendance-cell {
-      height: 24px;
-      border-radius: 3px;
-      background: rgba(181, 73, 91, 0.15);
-      border: 1px solid rgba(181, 73, 91, 0.25);
+      background: #0d0507;
+      border-bottom: 1px solid var(--rose-border);
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 0.6rem;
-      color: var(--pale-rose-beige);
     }
 
-    .attendance-cell.checked {
-      background: rgba(90, 15, 28, 0.6);
-      border-color: var(--muted-rose);
-      color: #34d399;
-    }
-
-    /* Mockup 3: ScreenPass Cinema Grid */
-    .cinema-screen {
-      width: 70%;
-      height: 12px;
-      margin: 0 auto 0.5rem auto;
-      border-top: 2px solid var(--muted-rose);
-      border-radius: 50% 50% 0 0;
-      box-shadow: 0 -4px 12px rgba(181, 73, 91, 0.4);
-    }
-
-    .seat-grid {
-      display: grid;
-      grid-template-columns: repeat(8, 1fr);
-      gap: 6px;
-      max-width: 220px;
-      margin: 0 auto;
-    }
-
-    .seat {
-      height: 14px;
-      background: rgba(181, 73, 91, 0.2);
-      border: 1px solid rgba(181, 73, 91, 0.35);
-      border-radius: 3px;
-    }
-
-    .seat.selected {
-      background: var(--pale-rose-beige);
-      border-color: #ffffff;
-      box-shadow: 0 0 8px rgba(227, 196, 176, 0.6);
-    }
-
-    .seat.reserved {
-      background: var(--burgundy);
-      border-color: var(--muted-rose);
-    }
-
-    .ticket-bar {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-top: auto;
-      font-size: 0.65rem;
-      padding-top: 0.3rem;
-      border-top: 1px dashed rgba(181, 73, 91, 0.2);
-      color: var(--pale-rose-beige);
-    }
-
-    /* Mockup 4: SRP Rentals Fleet */
-    .fleet-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      font-size: 0.65rem;
-      color: var(--pale-rose-beige);
-    }
-
-    .fleet-vehicle-card {
-      background: rgba(28, 6, 11, 0.8);
-      border: 1px solid rgba(181, 73, 91, 0.25);
-      border-radius: 4px;
-      padding: 0.6rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .calc-slider {
+    .project-img-slot img {
       width: 100%;
-      height: 4px;
-      background: rgba(181, 73, 91, 0.2);
-      border-radius: 2px;
-      position: relative;
-      margin-top: 0.6rem;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
     }
 
-    .calc-slider-fill {
-      width: 65%;
-      height: 100%;
-      background: var(--muted-rose);
-      border-radius: 2px;
+    .project-card:hover .project-img-slot img {
+      transform: scale(1.03);
+    }
+
+    /* Clean Dark Editorial Placeholder for Project Mockups */
+    .project-placeholder {
+      width: calc(100% - 1.5rem);
+      height: calc(100% - 1.5rem);
+      margin: 0.75rem;
+      border: 1px dashed rgba(210, 105, 125, 0.32);
+      border-radius: 6px;
+      background: radial-gradient(circle at 50% 40%, rgba(90, 15, 28, 0.32) 0%, rgba(18, 6, 9, 0.95) 85%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 0.7rem;
+      padding: 1.25rem;
+      text-align: center;
+      box-sizing: border-box;
+      transition: var(--transition-smooth);
+    }
+
+    .project-card:hover .project-placeholder {
+      border-color: var(--muted-rose);
+      background: radial-gradient(circle at 50% 40%, rgba(122, 21, 39, 0.42) 0%, rgba(22, 7, 11, 0.98) 85%);
+    }
+
+    .placeholder-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted-rose);
+      background: rgba(90, 15, 28, 0.35);
+      border: 1px solid rgba(210, 105, 125, 0.3);
+      padding: 0.25rem 0.65rem;
+      border-radius: 4px;
+    }
+
+    .placeholder-icon {
+      color: var(--muted-rose);
+      opacity: 0.9;
+    }
+
+    .placeholder-title {
+      font-family: var(--font-serif);
+      font-size: 1.15rem;
+      color: var(--pale-rose-beige);
+      font-weight: 500;
+      letter-spacing: -0.01em;
+    }
+
+    .placeholder-hint {
+      font-size: 0.75rem;
+      color: var(--beige-dim);
+      letter-spacing: 0.04em;
     }
 
     /* Project Details & Body */
@@ -859,13 +705,13 @@
     }
 
     .tag-pill {
-      font-size: 0.72rem;
+      font-size: 0.75rem;
       letter-spacing: 0.08em;
       text-transform: uppercase;
-      padding: 0.25rem 0.65rem;
-      background: rgba(42, 10, 16, 0.7);
-      border: 1px solid rgba(181, 73, 91, 0.25);
-      border-radius: 3px;
+      padding: 0.3rem 0.7rem;
+      background: rgba(42, 10, 16, 0.75);
+      border: 1px solid var(--rose-border);
+      border-radius: 4px;
       color: var(--pale-rose-beige);
     }
 
@@ -874,19 +720,19 @@
       align-items: center;
       gap: 1rem;
       padding-top: 0.75rem;
-      border-top: 1px solid rgba(181, 73, 91, 0.15);
+      border-top: 1px solid rgba(210, 105, 125, 0.2);
     }
 
     .btn-card-link {
       display: inline-flex;
       align-items: center;
       gap: 0.5rem;
-      font-size: 0.78rem;
+      font-size: 0.8rem;
       font-weight: 600;
       text-transform: uppercase;
       letter-spacing: 0.12em;
       color: var(--pale-rose-beige);
-      padding: 0.5rem 1rem;
+      padding: 0.55rem 1.05rem;
       background: rgba(90, 15, 28, 0.4);
       border: 1px solid var(--rose-border);
       border-radius: 4px;
@@ -913,27 +759,28 @@
        ========================================================================== */
     .process-layout {
       display: grid;
-      grid-template-columns: 1.25fr 1fr;
-      gap: 3.5rem;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: clamp(2rem, 4vw, 3.25rem);
       align-items: center;
     }
 
     @media (max-width: 900px) {
       .process-layout {
         grid-template-columns: 1fr;
+        gap: 2.5rem;
       }
     }
 
     .steps-list {
       display: flex;
       flex-direction: column;
-      gap: 1.5rem;
+      gap: 1.25rem;
     }
 
     .step-item {
       display: flex;
       align-items: flex-start;
-      gap: 1.5rem;
+      gap: 1.25rem;
       padding: 1.25rem 1.5rem;
       background: var(--bg-wine-card);
       border: 1px solid var(--rose-border);
@@ -962,9 +809,9 @@
     }
 
     .step-content p {
-      font-size: 0.88rem;
+      font-size: 0.9rem;
       color: var(--beige-subtle);
-      line-height: 1.5;
+      line-height: 1.55;
     }
 
     /* Process Circular Flower Frame */
@@ -972,8 +819,10 @@
       display: flex;
       flex-direction: column;
       align-items: center;
+      justify-content: center;
       text-align: center;
-      gap: 1.75rem;
+      gap: 1.5rem;
+      height: 100%;
     }
 
     .circular-frame {
@@ -1064,7 +913,7 @@
     }
 
     .skill-category-tag {
-      font-size: 0.65rem;
+      font-size: 0.75rem;
       text-transform: uppercase;
       letter-spacing: 0.12em;
       color: var(--beige-dim);
@@ -1098,7 +947,7 @@
       content: '';
       flex: 1;
       height: 1px;
-      background: linear-gradient(90deg, rgba(181, 73, 91, 0.3) 0%, transparent 100%);
+      background: linear-gradient(90deg, rgba(210, 105, 125, 0.35) 0%, transparent 100%);
     }
 
     .cert-grid {
@@ -1149,12 +998,12 @@
       display: inline-flex;
       align-items: center;
       gap: 0.45rem;
-      font-size: 0.75rem;
+      font-size: 0.78rem;
       font-weight: 600;
       text-transform: uppercase;
       letter-spacing: 0.12em;
       color: var(--pale-rose-beige);
-      padding: 0.45rem 0.95rem;
+      padding: 0.5rem 1rem;
       background: rgba(90, 15, 28, 0.4);
       border: 1px solid var(--rose-border);
       border-radius: 4px;
@@ -1166,6 +1015,47 @@
       background: var(--burgundy);
       border-color: var(--muted-rose);
       color: #ffffff;
+    }
+
+    /* Collapsible Extra Certifications */
+    .cert-extra-wrap {
+      display: grid;
+      grid-template-rows: 0fr;
+      transition: grid-template-rows 0.5s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.4s ease;
+      opacity: 0;
+      visibility: hidden;
+    }
+
+    .cert-extra-wrap.expanded {
+      grid-template-rows: 1fr;
+      opacity: 1;
+      visibility: visible;
+      margin-top: 3.5rem;
+    }
+
+    .cert-extra-inner {
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      gap: 3.5rem;
+    }
+
+    .cert-toggle-wrap {
+      display: flex;
+      justify-content: center;
+      margin-top: 3rem;
+    }
+
+    .cert-toggle-btn {
+      cursor: pointer;
+    }
+
+    .cert-toggle-chevron {
+      transition: transform 0.35s ease;
+    }
+
+    .cert-toggle-btn[aria-expanded="true"] .cert-toggle-chevron {
+      transform: rotate(180deg);
     }
 
     /* ==========================================================================
@@ -1446,6 +1336,9 @@
         opacity: 1 !important;
         transform: none !important;
       }
+      .cert-extra-wrap {
+        transition: none !important;
+      }
     }
 
     /* Mobile Responsive Fine-tuning */
@@ -1457,18 +1350,18 @@
       .hero-headline-wrap {
         position: relative;
         top: 0;
-        margin-bottom: 0.25rem;
+        margin-bottom: 0.5rem;
         padding: 0 0.5rem;
       }
       .hero-headline {
-        font-size: clamp(2rem, 11vw, 6.2rem);
+        font-size: clamp(1.85rem, 10.2vw, 5.8rem);
       }
       .hero-stage {
         min-height: auto;
       }
       .hero-cutout-img {
-        height: 58vh;
-        min-height: 380px;
+        height: 56vh;
+        min-height: 360px;
       }
       .hero-editorial-overlay {
         position: relative;
@@ -1505,12 +1398,54 @@
         padding-left: 0;
         border-bottom: 2px solid var(--burgundy);
         padding-bottom: 0.75rem;
+        font-size: clamp(1.2rem, 4.5vw, 1.6rem);
       }
       .signature-name {
-        font-size: 3.2rem;
+        font-size: clamp(2.4rem, 8vw, 3.2rem);
       }
       .section-wrap {
-        padding: 4.5rem 0;
+        padding: clamp(56px, 7vw, 80px) 0;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        padding: 0 1.25rem;
+      }
+      p, .project-desc, .step-content p, .closing-sub {
+        font-size: max(14px, 0.875rem);
+      }
+      .corner-label, .tag-pill, .skill-category-tag, .cert-issuer-label {
+        font-size: max(12px, 0.75rem);
+      }
+      .closing-photo-wrap {
+        justify-content: center;
+        min-height: auto;
+      }
+      .closing-photo-frame {
+        width: min(260px, 80vw);
+        height: 320px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .editorial-header {
+        flex-direction: row;
+        padding: 1.25rem 0 0.85rem 0;
+      }
+      .hero-headline {
+        font-size: clamp(1.75rem, 9.5vw, 3.2rem);
+      }
+      .pill-status {
+        font-size: 0.75rem;
+      }
+      .btn-editorial {
+        width: 100%;
+        justify-content: center;
+      }
+      .closing-socials {
+        flex-wrap: wrap;
+        justify-content: center;
       }
     }
   </style>
@@ -1663,39 +1598,21 @@
             <span class="project-type-tag">Enterprise ERP &bull; In Progress</span>
           </div>
 
-          <!-- CSS Dark UI Mockup: ERP Ledger -->
-          <div class="mockup-frame">
-            <div class="mockup-chrome">
-              <span class="mockup-dot"></span>
-              <span class="mockup-dot"></span>
-              <span class="mockup-dot"></span>
-              <span class="mockup-url-bar">axiomerp.internal / ledger-audit</span>
-            </div>
-            <div class="mockup-canvas">
-              <div class="erp-stats-row">
-                <div class="erp-stat-box">
-                  <span>Balance</span>
-                  <strong>$24,800.00</strong>
-                </div>
-                <div class="erp-stat-box">
-                  <span>Inventory</span>
-                  <strong>98.4% Avail</strong>
-                </div>
-                <div class="erp-stat-box">
-                  <span>Tenants</span>
-                  <strong>Isolated</strong>
-                </div>
-              </div>
-              <div class="erp-ledger-table">
-                <div class="erp-table-row">
-                  <span>PO-1048 &bull; Vendor Apex</span>
-                  <span class="erp-status-badge">POSTED GRN</span>
-                </div>
-                <div class="erp-table-row">
-                  <span>PO-1049 &bull; Multi-Tenant RBAC</span>
-                  <span class="erp-status-badge">BALANCED</span>
-                </div>
-              </div>
+          <!-- Project 1 Image Slot (16:10, Rounded, Subtle Crimson Border) -->
+          <!-- TODO: Drop real screenshot here: replace placeholder with <img src="axiomerp.png" alt="AxiomERP Platform Screenshot" loading="lazy" /> -->
+          <div class="project-img-slot">
+            <div class="project-placeholder">
+              <span class="placeholder-badge">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                In Active Updation
+              </span>
+              <svg class="placeholder-icon" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+                <rect x="2" y="3" width="20" height="14" rx="2"></rect>
+                <line x1="8" y1="21" x2="16" y2="21"></line>
+                <line x1="12" y1="17" x2="12" y2="21"></line>
+              </svg>
+              <h4 class="placeholder-title">AxiomERP Architecture Preview</h4>
+              <p class="placeholder-hint">Multi-tenant ERP &bull; Double-entry Ledger &bull; RBAC</p>
             </div>
           </div>
 
@@ -1729,33 +1646,20 @@
             <span class="project-type-tag">NGO Platform &bull; Production</span>
           </div>
 
-          <!-- CSS Dark UI Mockup: Multi-Branch Ops -->
-          <div class="mockup-frame">
-            <div class="mockup-chrome">
-              <span class="mockup-dot"></span>
-              <span class="mockup-dot"></span>
-              <span class="mockup-dot"></span>
-              <span class="mockup-url-bar">class-management.org / ops</span>
-            </div>
-            <div class="mockup-canvas">
-              <div class="ngo-kpi-bar">
-                <span class="ngo-role-badge">4-Tier Scoped RBAC</span>
-                <span class="ngo-test-badge">
-                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                  97 Backend &bull; 17 E2E Passed
-                </span>
-              </div>
-              <div class="attendance-kpi" style="font-size:0.65rem; color:var(--beige-dim); margin-top:0.3rem;">
-                Daily Attendance Enforcement & Fee Waiver Engine
-              </div>
-              <div class="ngo-attendance-grid">
-                <div class="attendance-cell checked">P</div>
-                <div class="attendance-cell checked">P</div>
-                <div class="attendance-cell checked">P</div>
-                <div class="attendance-cell">A</div>
-                <div class="attendance-cell checked">P</div>
-                <div class="attendance-cell checked">P</div>
-              </div>
+          <!-- Project 2 Image Slot (16:10, Rounded, Subtle Crimson Border) -->
+          <!-- TODO: Drop real screenshot here: replace placeholder with <img src="training-center.png" alt="Training Center Manager Screenshot" loading="lazy" /> -->
+          <div class="project-img-slot">
+            <div class="project-placeholder">
+              <span class="placeholder-badge">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                Production Verified
+              </span>
+              <svg class="placeholder-icon" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+                <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+                <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+              </svg>
+              <h4 class="placeholder-title">Training Center Manager UI</h4>
+              <p class="placeholder-hint">4-Tier Scoped RBAC &bull; 97 Backend Tests &bull; 17 Playwright E2E</p>
             </div>
           </div>
 
@@ -1793,37 +1697,26 @@
           </div>
 
           <!-- CSS Dark UI Mockup: Cinema Matrix -->
-          <div class="mockup-frame">
-            <div class="mockup-chrome">
-              <span class="mockup-dot"></span>
-              <span class="mockup-dot"></span>
-              <span class="mockup-dot"></span>
-              <span class="mockup-url-bar">screenpass.app / seat-matrix</span>
-            </div>
-            <div class="mockup-canvas">
-              <div class="cinema-screen"></div>
-              <div class="seat-grid">
-                <div class="seat reserved"></div>
-                <div class="seat selected"></div>
-                <div class="seat selected"></div>
-                <div class="seat"></div>
-                <div class="seat"></div>
-                <div class="seat reserved"></div>
-                <div class="seat"></div>
-                <div class="seat"></div>
-                <div class="seat"></div>
-                <div class="seat reserved"></div>
-                <div class="seat"></div>
-                <div class="seat"></div>
-                <div class="seat reserved"></div>
-                <div class="seat reserved"></div>
-                <div class="seat"></div>
-                <div class="seat"></div>
-              </div>
-              <div class="ticket-bar">
-                <span>Row C &bull; Seats 02, 03</span>
-                <span style="color:#34d399;">Pass Generated &bull; Concurrent Lock</span>
-              </div>
+          <!-- Project 3 Image Slot (16:10, Rounded, Subtle Crimson Border) -->
+          <!-- TODO: Drop real screenshot here: replace placeholder with <img src="screenpass.png" alt="ScreenPass Cinema Booking Screenshot" loading="lazy" /> -->
+          <div class="project-img-slot">
+            <div class="project-placeholder">
+              <span class="placeholder-badge">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polygon points="10 8 16 12 10 16 10 8"></polygon></svg>
+                Full Stack Live
+              </span>
+              <svg class="placeholder-icon" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+                <rect x="2" y="2" width="20" height="20" rx="2.18" ry="2.18"></rect>
+                <line x1="7" y1="2" x2="7" y2="22"></line>
+                <line x1="17" y1="2" x2="17" y2="22"></line>
+                <line x1="2" y1="12" x2="22" y2="12"></line>
+                <line x1="2" y1="7" x2="7" y2="7"></line>
+                <line x1="2" y1="17" x2="7" y2="17"></line>
+                <line x1="17" y1="17" x2="22" y2="17"></line>
+                <line x1="17" y1="7" x2="22" y2="7"></line>
+              </svg>
+              <h4 class="placeholder-title">ScreenPass Cinema Grid</h4>
+              <p class="placeholder-hint">Real-time Seat Locks &bull; Manager Screenings &bull; Instant Passes</p>
             </div>
           </div>
 
@@ -1852,41 +1745,34 @@
           </div>
         </article>
 
-        <!-- Project 4: SRP Rentals -->
+        <!-- Project 4: DriveMate -->
         <article class="project-card reveal">
           <div class="card-meta-bar">
             <span class="project-index">04</span>
             <span class="project-type-tag">Vehicle Fleet &bull; Booking System</span>
           </div>
 
-          <!-- CSS Dark UI Mockup: Vehicle Fleet -->
-          <div class="mockup-frame">
-            <div class="mockup-chrome">
-              <span class="mockup-dot"></span>
-              <span class="mockup-dot"></span>
-              <span class="mockup-dot"></span>
-              <span class="mockup-url-bar">srp-rentals.com / fleet-catalog</span>
-            </div>
-            <div class="mockup-canvas">
-              <div class="fleet-header">
-                <span>Fleet Availability</span>
-                <span style="color:#34d399;">Active &bull; 18 Models</span>
-              </div>
-              <div class="fleet-vehicle-card">
-                <div>
-                  <span style="font-size:0.75rem; color:var(--pale-rose-beige); font-weight:600; display:block;">Premium Sedan Class</span>
-                  <span style="font-size:0.6rem; color:var(--beige-dim);">$65 / Day &bull; Automated Duration Calc</span>
-                </div>
-                <span class="erp-status-badge">RESERVED</span>
-              </div>
-              <div class="calc-slider">
-                <div class="calc-slider-fill"></div>
-              </div>
+          <!-- Project 4 Image Slot (16:10, Rounded, Subtle Crimson Border) -->
+          <!-- TODO: Drop real screenshot here: replace placeholder with <img src="drivemate.png" alt="DriveMate Fleet System Screenshot" loading="lazy" /> -->
+          <div class="project-img-slot">
+            <div class="project-placeholder">
+              <span class="placeholder-badge">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 14 14"></polyline></svg>
+                Fleet Platform
+              </span>
+              <svg class="placeholder-icon" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+                <rect x="1" y="3" width="15" height="13"></rect>
+                <polygon points="16 8 20 8 23 11 23 16 16 16 8"></polygon>
+                <circle cx="5.5" cy="18.5" r="2.5"></circle>
+                <circle cx="18.5" cy="18.5" r="2.5"></circle>
+              </svg>
+              <h4 class="placeholder-title">DriveMate Fleet Dashboard</h4>
+              <p class="placeholder-hint">Dynamic Fleet Filtering &bull; Duration Pricing &bull; Admin Controls</p>
             </div>
           </div>
 
           <div class="card-body">
-            <h3 class="project-title">SRP Rentals</h3>
+            <h3 class="project-title">DriveMate</h3>
             <p class="project-desc">
               Vehicle rental system featuring dynamic fleet cataloging, live vehicle availability filtering, customer reservation scheduling, duration-based cost calculation, and administrative fleet controls.
             </p>
@@ -2186,21 +2072,10 @@
 
       <div class="cert-groups reveal">
         
-        <!-- Group 1: Google -->
+        <!-- Group 1: Google (2 Priority Credentials) -->
         <div class="cert-group">
           <h3 class="cert-issuer-title">Google</h3>
           <div class="cert-grid">
-            <div class="cert-card">
-              <div class="cert-header">
-                <span class="cert-issuer-label">Google Career Certificates</span>
-                <h4 class="cert-title">Data Analysis with R Programming</h4>
-              </div>
-              <a href="https://ik.imagekit.io/8wguvwsuie/certificates/Coursera/Data%20Analysis%20with%20R%20Programming.pdf?updatedAt=1766241044646" target="_blank" rel="noopener noreferrer" class="cert-view-btn">
-                <span>View Certificate</span>
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
-              </a>
-            </div>
-
             <div class="cert-card">
               <div class="cert-header">
                 <span class="cert-issuer-label">Google Career Certificates</span>
@@ -2211,10 +2086,21 @@
                 <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
               </a>
             </div>
+
+            <div class="cert-card">
+              <div class="cert-header">
+                <span class="cert-issuer-label">Google Career Certificates</span>
+                <h4 class="cert-title">Data Analysis with R Programming</h4>
+              </div>
+              <a href="https://ik.imagekit.io/8wguvwsuie/certificates/Coursera/Data%20Analysis%20with%20R%20Programming.pdf?updatedAt=1766241044646" target="_blank" rel="noopener noreferrer" class="cert-view-btn">
+                <span>View Certificate</span>
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+              </a>
+            </div>
           </div>
         </div>
 
-        <!-- Group 2: IBM -->
+        <!-- Group 2: IBM (2 Priority Credentials) -->
         <div class="cert-group">
           <h3 class="cert-issuer-title">IBM</h3>
           <div class="cert-grid">
@@ -2224,28 +2110,6 @@
                 <h4 class="cert-title">Generative AI: Introduction and Applications</h4>
               </div>
               <a href="https://ik.imagekit.io/8wguvwsuie/certificates/Coursera/Generative%20AI-%20Introduction%20and%20Applications.pdf?updatedAt=1768979931274" target="_blank" rel="noopener noreferrer" class="cert-view-btn">
-                <span>View Certificate</span>
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
-              </a>
-            </div>
-
-            <div class="cert-card">
-              <div class="cert-header">
-                <span class="cert-issuer-label">IBM</span>
-                <h4 class="cert-title">Introduction to Cybersecurity Essentials</h4>
-              </div>
-              <a href="https://ik.imagekit.io/8wguvwsuie/certificates/Coursera/Introduction%20to%20Cybersecurity%20Essentials.pdf?updatedAt=1766241044611" target="_blank" rel="noopener noreferrer" class="cert-view-btn">
-                <span>View Certificate</span>
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
-              </a>
-            </div>
-
-            <div class="cert-card">
-              <div class="cert-header">
-                <span class="cert-issuer-label">IBM</span>
-                <h4 class="cert-title">Introduction to Data Analytics</h4>
-              </div>
-              <a href="https://ik.imagekit.io/8wguvwsuie/certificates/Coursera/Introduction%20to%20Data%20Analytics.pdf?updatedAt=1768979931391" target="_blank" rel="noopener noreferrer" class="cert-view-btn">
                 <span>View Certificate</span>
                 <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
               </a>
@@ -2264,60 +2128,16 @@
           </div>
         </div>
 
-        <!-- Group 3: University Programs -->
+        <!-- Group 3: University Programs (2 Priority Credentials) -->
         <div class="cert-group">
           <h3 class="cert-issuer-title">University Programs</h3>
           <div class="cert-grid">
-            <div class="cert-card">
-              <div class="cert-header">
-                <span class="cert-issuer-label">University at Buffalo</span>
-                <h4 class="cert-title">Blockchain Basics</h4>
-              </div>
-              <a href="https://ik.imagekit.io/8wguvwsuie/certificates/Coursera/Blockchain%20Basics.pdf?updatedAt=1766241045037" target="_blank" rel="noopener noreferrer" class="cert-view-btn">
-                <span>View Certificate</span>
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
-              </a>
-            </div>
-
-            <div class="cert-card">
-              <div class="cert-header">
-                <span class="cert-issuer-label">CentraleSupélec</span>
-                <h4 class="cert-title">Build Your First Android App</h4>
-              </div>
-              <a href="https://ik.imagekit.io/8wguvwsuie/certificates/Coursera/Build%20Your%20First%20Android%20App.pdf?updatedAt=1766241044627" target="_blank" rel="noopener noreferrer" class="cert-view-btn">
-                <span>View Certificate</span>
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
-              </a>
-            </div>
-
-            <div class="cert-card">
-              <div class="cert-header">
-                <span class="cert-issuer-label">UC Santa Cruz</span>
-                <h4 class="cert-title">C++ For C Programmers, Part A</h4>
-              </div>
-              <a href="https://ik.imagekit.io/8wguvwsuie/certificates/Coursera/C++%20For%20C%20Programmers,%20Part%20A.pdf?updatedAt=1766241044649" target="_blank" rel="noopener noreferrer" class="cert-view-btn">
-                <span>View Certificate</span>
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
-              </a>
-            </div>
-
             <div class="cert-card">
               <div class="cert-header">
                 <span class="cert-issuer-label">University of Michigan</span>
                 <h4 class="cert-title">Interactivity with JavaScript</h4>
               </div>
               <a href="https://ik.imagekit.io/8wguvwsuie/certificates/Coursera/Interactivity%20with%20JavaScript.pdf?updatedAt=1766241044909" target="_blank" rel="noopener noreferrer" class="cert-view-btn">
-                <span>View Certificate</span>
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
-              </a>
-            </div>
-
-            <div class="cert-card">
-              <div class="cert-header">
-                <span class="cert-issuer-label">University of Colorado System</span>
-                <h4 class="cert-title">Introduction to C# Programming &amp; Unity</h4>
-              </div>
-              <a href="https://ik.imagekit.io/8wguvwsuie/certificates/Coursera/Introduction%20to%20C_%20Programming%20and%20Unity.pdf?updatedAt=1766241044695" target="_blank" rel="noopener noreferrer" class="cert-view-btn">
                 <span>View Certificate</span>
                 <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
               </a>
@@ -2336,23 +2156,124 @@
           </div>
         </div>
 
-        <!-- Group 4: Coursera Project Network -->
-        <div class="cert-group">
-          <h3 class="cert-issuer-title">Coursera Project Network</h3>
-          <div class="cert-grid">
-            <div class="cert-card">
-              <div class="cert-header">
-                <span class="cert-issuer-label">Coursera Project Network</span>
-                <h4 class="cert-title">Gen AI for Software Development: Code Generation for Python</h4>
+      </div>
+
+      <!-- Collapsible Container: Remaining 7 Credentials -->
+      <div id="certExtra" class="cert-extra-wrap" aria-hidden="true">
+        <div class="cert-extra-inner">
+          
+          <!-- Additional IBM Credentials -->
+          <div class="cert-group">
+            <h3 class="cert-issuer-title">IBM (Continued)</h3>
+            <div class="cert-grid">
+              <div class="cert-card">
+                <div class="cert-header">
+                  <span class="cert-issuer-label">IBM</span>
+                  <h4 class="cert-title">Introduction to Cybersecurity Essentials</h4>
+                </div>
+                <a href="https://ik.imagekit.io/8wguvwsuie/certificates/Coursera/Introduction%20to%20Cybersecurity%20Essentials.pdf?updatedAt=1766241044611" target="_blank" rel="noopener noreferrer" class="cert-view-btn">
+                  <span>View Certificate</span>
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                </a>
               </div>
-              <a href="https://ik.imagekit.io/8wguvwsuie/certificates/Coursera/Gen%20AI%20for%20Software%20Development%20Code%20Generation%20for%20Python.pdf" target="_blank" rel="noopener noreferrer" class="cert-view-btn">
-                <span>View Certificate</span>
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
-              </a>
+
+              <div class="cert-card">
+                <div class="cert-header">
+                  <span class="cert-issuer-label">IBM</span>
+                  <h4 class="cert-title">Introduction to Data Analytics</h4>
+                </div>
+                <a href="https://ik.imagekit.io/8wguvwsuie/certificates/Coursera/Introduction%20to%20Data%20Analytics.pdf?updatedAt=1768979931391" target="_blank" rel="noopener noreferrer" class="cert-view-btn">
+                  <span>View Certificate</span>
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                </a>
+              </div>
             </div>
           </div>
-        </div>
 
+          <!-- Additional University Credentials -->
+          <div class="cert-group">
+            <h3 class="cert-issuer-title">University Programs (Continued)</h3>
+            <div class="cert-grid">
+              <div class="cert-card">
+                <div class="cert-header">
+                  <span class="cert-issuer-label">University at Buffalo</span>
+                  <h4 class="cert-title">Blockchain Basics</h4>
+                </div>
+                <a href="https://ik.imagekit.io/8wguvwsuie/certificates/Coursera/Blockchain%20Basics.pdf?updatedAt=1766241045037" target="_blank" rel="noopener noreferrer" class="cert-view-btn">
+                  <span>View Certificate</span>
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                </a>
+              </div>
+
+              <div class="cert-card">
+                <div class="cert-header">
+                  <span class="cert-issuer-label">CentraleSupélec</span>
+                  <h4 class="cert-title">Build Your First Android App</h4>
+                </div>
+                <a href="https://ik.imagekit.io/8wguvwsuie/certificates/Coursera/Build%20Your%20First%20Android%20App.pdf?updatedAt=1766241044627" target="_blank" rel="noopener noreferrer" class="cert-view-btn">
+                  <span>View Certificate</span>
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                </a>
+              </div>
+
+              <div class="cert-card">
+                <div class="cert-header">
+                  <span class="cert-issuer-label">UC Santa Cruz</span>
+                  <h4 class="cert-title">C++ For C Programmers, Part A</h4>
+                </div>
+                <a href="https://ik.imagekit.io/8wguvwsuie/certificates/Coursera/C++%20For%20C%20Programmers,%20Part%20A.pdf?updatedAt=1766241044649" target="_blank" rel="noopener noreferrer" class="cert-view-btn">
+                  <span>View Certificate</span>
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                </a>
+              </div>
+
+              <div class="cert-card">
+                <div class="cert-header">
+                  <span class="cert-issuer-label">University of Colorado System</span>
+                  <h4 class="cert-title">Introduction to C# Programming &amp; Unity</h4>
+                </div>
+                <a href="https://ik.imagekit.io/8wguvwsuie/certificates/Coursera/Introduction%20to%20C_%20Programming%20and%20Unity.pdf?updatedAt=1766241044695" target="_blank" rel="noopener noreferrer" class="cert-view-btn">
+                  <span>View Certificate</span>
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Group 4: Coursera Project Network -->
+          <div class="cert-group">
+            <h3 class="cert-issuer-title">Coursera Project Network</h3>
+            <div class="cert-grid">
+              <div class="cert-card">
+                <div class="cert-header">
+                  <span class="cert-issuer-label">Coursera Project Network</span>
+                  <h4 class="cert-title">Gen AI for Software Development: Code Generation for Python</h4>
+                </div>
+                <a href="https://ik.imagekit.io/8wguvwsuie/certificates/Coursera/Gen%20AI%20for%20Software%20Development%20Code%20Generation%20for%20Python.pdf" target="_blank" rel="noopener noreferrer" class="cert-view-btn">
+                  <span>View Certificate</span>
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                </a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Accessible Toggle Button -->
+      <div class="cert-toggle-wrap reveal">
+        <button 
+          id="certToggleBtn" 
+          class="btn-editorial cert-toggle-btn" 
+          type="button" 
+          aria-expanded="false" 
+          aria-controls="certExtra"
+        >
+          <span id="certBtnText">View all 13 certifications</span>
+          <svg class="cert-toggle-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <polyline points="6 9 12 15 18 9"></polyline>
+          </svg>
+        </button>
       </div>
 
     </section>
@@ -2396,7 +2317,7 @@
           </h2>
           
           <p class="closing-sub">
-            Open to full stack roles and internships
+            Looking for full-stack and backend internships / junior roles.
           </p>
 
           <div class="closing-contact-details">
@@ -2443,9 +2364,11 @@
           <div class="closing-photo-frame">
             <img 
               src="./assets/uzer-cutout-bw-CmriU3qg.png" 
-              alt="Shaikh Mohammed Uzer portrait" 
+              alt="Shaikh Mohammed Uzer portrait in black and white" 
               class="closing-photo"
               id="closingPhotoImg"
+              loading="lazy"
+              decoding="async"
             />
             <div class="closing-signature-seal">~ Uzer</div>
           </div>
@@ -2480,6 +2403,33 @@
           this.onerror = null;
           this.src = 'uzer-cutout-bw.png';
         };
+      }
+
+      // Certifications Expand/Collapse Toggle
+      const certToggleBtn = document.getElementById('certToggleBtn');
+      const certExtra = document.getElementById('certExtra');
+      const certBtnText = document.getElementById('certBtnText');
+
+      if (certToggleBtn && certExtra) {
+        certToggleBtn.addEventListener('click', function () {
+          const isExpanded = certToggleBtn.getAttribute('aria-expanded') === 'true';
+          const nextState = !isExpanded;
+
+          certToggleBtn.setAttribute('aria-expanded', String(nextState));
+          certExtra.setAttribute('aria-hidden', String(!nextState));
+
+          if (nextState) {
+            certExtra.classList.add('expanded');
+            if (certBtnText) certBtnText.textContent = 'Show top 6 certifications';
+          } else {
+            certExtra.classList.remove('expanded');
+            if (certBtnText) certBtnText.textContent = 'View all 13 certifications';
+            const certSection = document.getElementById('certificates');
+            if (certSection) {
+              certSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+          }
+        });
       }
 
       // Intersection Observer for Smooth Scroll Reveals
